@@ -1,385 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Mahmoud Emam - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .skill-bar {
-            transition: width 2s ease-in-out;
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohamed Mahmoud Emam - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-gray-800">ME</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-purple-600 transition-colors">About</a>
-                    <a href="#portfolio" class="text-gray-600 hover:text-purple-600 transition-colors">Portfolio</a>
-                    <a href="#contact" class="text-gray-600 hover:text-purple-600 transition-colors">Contact</a>
-                </div>
-                <button id="mobile-menu" class="md:hidden text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-gray-800">ME</div>
+      <div class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="#cover" class="hover:text-purple-600">Cover</a>
+        <a href="#about" class="hover:text-purple-600">About</a>
+        <a href="#education" class="hover:text-purple-600">Education</a>
+        <a href="#skills" class="hover:text-purple-600">Skills</a>
+        <a href="#experience" class="hover:text-purple-600">Experience</a>
+        <a href="#services" class="hover:text-purple-600">Services</a>
+        <a href="#projects" class="hover:text-purple-600">Projects</a>
+        <a href="#achievements" class="hover:text-purple-600">Achievements</a>
+        <a href="#contact" class="hover:text-purple-600">Contact</a>
+        <a href="#thankyou" class="hover:text-purple-600">Thank You</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Cover -->
+  <section id="cover" class="gradient-bg min-h-screen flex flex-col items-center justify-center text-white text-center">
+    <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in">Mohamed Mahmoud Emam</h1>
+    <p class="text-2xl mb-6 fade-in">AI Engineer & Data Scientist</p>
+    <p class="max-w-2xl mx-auto mb-6 fade-in">Passionate about turning data into meaningful solutions and exploring how AI can solve real-world challenges in creative ways.</p>
+    <div class="space-x-4 fade-in">
+      <a href="#projects" class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">View My Work</a>
+      <a href="#contact" class="border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- 2. About -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Third-year Computer Science student at Zewail City of Science and Technology, majoring in Data Science & Artificial Intelligence.
+        I love working on projects that blend machine learning, computer vision, and NLP to solve practical problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Education -->
+  <section id="education" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-8 text-center">Education</h2>
+      <div class="space-y-6 text-lg text-gray-700">
+        <div>
+          <h3 class="font-semibold">Zewail City of Science and Technology</h3>
+          <p>BSc in Data Science & AI (2022–2026) – GPA: 3.1</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
-        <div class="text-center px-6">
-            <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 flex items-center justify-center text-6xl">
-                🤖
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in">Mohamed Mahmoud Emam</h1>
-            <p class="text-xl md:text-2xl mb-4 text-white/90 fade-in">AI Engineer & Data Scientist</p>
-            <p class="text-lg md:text-xl mb-8 text-white/80 max-w-3xl mx-auto fade-in">
-                Passionate with turning data into meaningful solutions and exploring how technology can solve real-world challenges in creative ways.
-            </p>
-            <div class="space-x-4 fade-in">
-                <button onclick="scrollToSection('portfolio')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                    View My Work
-                </button>
-                <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-colors">
-                    Get In Touch
-                </button>
-            </div>
+        <div>
+          <h3 class="font-semibold">Genius Language School</h3>
+          <p>High School Diploma – Giza, Egypt</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">About Me</h2>
-                <div class="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed fade-in">
-                    <p class="mb-6">
-                        Hi, I'm Mohamed Mahmoud Emam – a passionate AI Engineer and Data Scientist with a strong curiosity for turning data into meaningful solutions. Currently pursuing my degree in Data Science & AI, I enjoy exploring how technology can solve real-world challenges in creative ways.
-                    </p>
-                    <p class="mb-6">
-                        I've worked on projects ranging from image captioning and drone detection to building simple search engines—each experience strengthening my problem-solving mindset and adaptability. Beyond the technical side, I value clarity, collaboration, and making complex ideas simple and useful.
-                    </p>
-                    <p>
-                        Whether it's contributing to a company's growth or helping clients bring their ideas to life, my goal is always the same: deliver solutions that make an impact while continuously learning along the way.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Skills & Expertise</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Machine Learning & AI</span>
-                                <span class="text-gray-500">90%</span>
-                            </div>
-                            <div class="bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-purple-600 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Data Analysis & Visualization</span>
-                                <span class="text-gray-500">85%</span>
-                            </div>
-                            <div class="bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-purple-600 h-2 rounded-full" style="width: 0%" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Python & Data Science</span>
-                                <span class="text-gray-500">88%</span>
-                            </div>
-                            <div class="bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-purple-600 h-2 rounded-full" style="width: 0%" data-width="88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fade-in">
-                    <div class="bg-gray-50 p-8 rounded-2xl">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">What I Do</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <div class="text-2xl">🤖</div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">AI & Machine Learning</h4>
-                                    <p class="text-gray-600">Building intelligent systems and predictive models</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="text-2xl">📊</div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Data Analytics</h4>
-                                    <p class="text-gray-600">Extracting insights from complex datasets</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="text-2xl">🔍</div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Computer Vision</h4>
-                                    <p class="text-gray-600">Image processing and pattern recognition</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- 4. Skills -->
+  <section id="skills" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-12">Skills</h2>
+      <div class="grid md:grid-cols-2 gap-12 text-left">
+        <div>
+          <h3 class="font-semibold text-xl mb-4">Programming</h3>
+          <p>Python, C++, Java, JavaScript, R</p>
         </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">My Portfolio</h2>
-                <p class="text-xl text-gray-600 fade-in">Here are some of my recent AI and Data Science projects</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                        <div class="text-white text-6xl">📷</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Image Captioning System</h3>
-                        <p class="text-gray-600 mb-4">AI-powered system that generates descriptive captions for images</p>
-                        <div class="flex space-x-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">TensorFlow</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-                        <div class="text-white text-6xl">🚁</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Drone Detection Model</h3>
-                        <p class="text-gray-600 mb-4">Computer vision model for detecting and tracking drones</p>
-                        <div class="flex space-x-2">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">OpenCV</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">YOLO</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
-                    <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center">
-                        <div class="text-white text-6xl">🔍</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Search Engine</h3>
-                        <p class="text-gray-600 mb-4">Custom search engine with ranking algorithms</p>
-                        <div class="flex space-x-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">NLP</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h3 class="font-semibold text-xl mb-4">Frameworks & Tools</h3>
+          <p>TensorFlow, PyTorch, OpenCV, Keras, Scikit-learn, Matplotlib</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">Get In Touch</h2>
-                <p class="text-xl text-gray-600 fade-in">Let's work together on your next AI project</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="fade-in">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Contact Info</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <div class="text-2xl">📧</div>
-                            <div>
-                                <p class="text-gray-600">Email</p>
-                                <p class="font-semibold text-gray-800">mohamed@example.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="text-2xl">📱</div>
-                            <div>
-                                <p class="text-gray-600">Phone</p>
-                                <p class="font-semibold text-gray-800">+20 (123) 456-7890</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="text-2xl">📍</div>
-                            <div>
-                                <p class="text-gray-600">Location</p>
-                                <p class="font-semibold text-gray-800">Egypt</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="text-lg font-semibold mb-4 text-gray-800">Follow Me</h4>
-                        <div class="flex space-x-4">
-                            <button class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <span class="text-xl">💼</span>
-                            </button>
-                            <button class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-900 transition-colors">
-                                <span class="text-xl">🐙</span>
-                            </button>
-                            <button class="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                                <span class="text-xl">🐦</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fade-in">
-                    <form class="space-y-6" onsubmit="handleSubmit(event)">
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Name</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Message</label>
-                            <textarea rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div>
+          <h3 class="font-semibold text-xl mb-4">Languages</h3>
+          <p>Arabic (native), English (B2)</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p>&copy; 2024 Mohamed Mahmoud Emam. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- 5. Work Experience -->
+  <section id="experience" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-8 text-center">Work Experience</h2>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold text-xl">Coding Instructor – iSchool</h3>
+        <p class="text-gray-600">July 2024</p>
+        <ul class="list-disc ml-6 mt-3 text-gray-700">
+          <li>Taught students aged 12–14 fundamentals of programming.</li>
+          <li>Covered variables, loops, conditionals, algorithms.</li>
+          <li>Encouraged problem-solving through projects.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+  <!-- 6. Offered Services -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-12">Offered Services</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-50 rounded-xl shadow">🤖 AI & Machine Learning</div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow">📊 Data Analysis & Visualization</div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow">🔍 Computer Vision & NLP</div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow">🧑‍🏫 Teaching & Mentorship</div>
+      </div>
+    </div>
+  </section>
 
-        // Navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                scrollToSection(targetId);
-            });
-        });
+  <!-- 7. Projects -->
+  <section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center">Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-white rounded-xl shadow">📷 CaptionGo.AI – Image Captioning</div>
+        <div class="p-6 bg-white rounded-xl shadow">🚁 Drone Detection using Deep Learning</div>
+        <div class="p-6 bg-white rounded-xl shadow">🧍 Person Tracking & Route Visualization (YOLOv8)</div>
+        <div class="p-6 bg-white rounded-xl shadow">📊 Activity Recognition with ML</div>
+        <div class="p-6 bg-white rounded-xl shadow">🔍 Simple Search Engine</div>
+      </div>
+    </div>
+  </section>
 
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <!-- 8. Achievements -->
+  <section id="achievements" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8">Achievements</h2>
+      <p class="text-lg text-gray-600">
+        🏆 Published multiple AI/Data Science projects on GitHub.  
+        🚀 Deployed apps on Hugging Face Spaces.  
+        🎯 Built successful prototypes (Image Captioning, Drone Detection).  
+      </p>
+    </div>
+  </section>
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+  <!-- 9. Contact -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8">Contact Me</h2>
+      <p class="mb-4">📧 mohamedmahmoudemam23@gmail.com</p>
+      <p class="mb-4">📱 01018656519</p>
+      <p class="mb-4">🌍 Giza, Egypt</p>
+      <p class="mb-4">🐙 <a href="https://github.com/mohamed-7oda" class="text-purple-600">GitHub</a></p>
+      <p>🔗 <a href="https://linkedin.com/in/mohamed-mahmoud-emam-03ba16263" class="text-purple-600">LinkedIn</a></p>
+    </div>
+  </section>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+  <!-- 10. Thank You -->
+  <section id="thankyou" class="py-20 gradient-bg text-white text-center">
+    <h2 class="text-4xl font-bold mb-4">Thank You!</h2>
+    <p class="text-lg">Let's build something impactful together 🚀</p>
+  </section>
 
-        // Skill bars animation
-        const skillObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-bar');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 500);
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 Mohamed Mahmoud Emam. All rights reserved.</p>
+  </footer>
 
-        const skillsSection = document.querySelector('#about');
-        if (skillsSection) {
-            skillObserver.observe(skillsSection);
-        }
-
-        // Mobile menu toggle
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            // Simple mobile menu implementation
-            alert('Mobile menu would open here. This is a demo portfolio.');
-        });
-
-        // Form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! This is a demo form - in a real site, this would send your message.');
-            event.target.reset();
-        }
-
-        // Initial fade-in for hero section
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.querySelectorAll('#home .fade-in').forEach(el => {
-                    el.classList.add('visible');
-                });
-            }, 300);
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974cf05db0ebda31',t:'MTc1NjE0NDMwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
+      });
+    });
+    // Fade-in animations
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+      });
+    },{threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+  </script>
+</body>
 </html>
-
