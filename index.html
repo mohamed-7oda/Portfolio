@@ -1,192 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mohamed Mahmoud Emam - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Mahmoud Emam - Data Scientist & AI Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .tech-grid { background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 50px 50px; }
+        .glow { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .typing-animation { border-right: 2px solid #667eea; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 50% { border-color: transparent; } 51%, 100% { border-color: #667eea; } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .skill-bar { width: 0%; transition: width 2s ease-in-out; }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: linear-gradient(90deg, #667eea, #764ba2); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
 </head>
-<body class="bg-gray-50">
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-gray-800">ME</div>
-      <div class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="#cover" class="hover:text-purple-600">Cover</a>
-        <a href="#about" class="hover:text-purple-600">About</a>
-        <a href="#education" class="hover:text-purple-600">Education</a>
-        <a href="#skills" class="hover:text-purple-600">Skills</a>
-        <a href="#experience" class="hover:text-purple-600">Experience</a>
-        <a href="#services" class="hover:text-purple-600">Services</a>
-        <a href="#projects" class="hover:text-purple-600">Projects</a>
-        <a href="#achievements" class="hover:text-purple-600">Achievements</a>
-        <a href="#contact" class="hover:text-purple-600">Contact</a>
-        <a href="#thankyou" class="hover:text-purple-600">Thank You</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 1. Cover -->
-  <section id="cover" class="gradient-bg min-h-screen flex flex-col items-center justify-center text-white text-center">
-    <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in">Mohamed Mahmoud Emam</h1>
-    <p class="text-2xl mb-6 fade-in">AI Engineer & Data Scientist</p>
-    <p class="max-w-2xl mx-auto mb-6 fade-in">Passionate about turning data into meaningful solutions and exploring how AI can solve real-world challenges in creative ways.</p>
-    <div class="space-x-4 fade-in">
-      <a href="#projects" class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">View My Work</a>
-      <a href="#contact" class="border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- 2. About -->
-  <section id="about" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-6">About Me</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        Third-year Computer Science student at Zewail City of Science and Technology, majoring in Data Science & Artificial Intelligence.
-        I love working on projects that blend machine learning, computer vision, and NLP to solve practical problems.
-      </p>
-    </div>
-  </section>
-
-  <!-- 3. Education -->
-  <section id="education" class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-8 text-center">Education</h2>
-      <div class="space-y-6 text-lg text-gray-700">
-        <div>
-          <h3 class="font-semibold">Zewail City of Science and Technology</h3>
-          <p>BSc in Data Science & AI (2022–2026) – GPA: 3.1</p>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold gradient-text">Mohamed Mahmoud Emam</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#cover" class="nav-link hover:text-blue-400">Home</a>
+                    <a href="#about" class="nav-link hover:text-blue-400">About</a>
+                    <a href="#skills" class="nav-link hover:text-blue-400">Skills</a>
+                    <a href="#experience" class="nav-link hover:text-blue-400">Experience</a>
+                    <a href="#projects" class="nav-link hover:text-blue-400">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-blue-400">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">...</button>
+            </div>
         </div>
-        <div>
-          <h3 class="font-semibold">Genius Language School</h3>
-          <p>High School Diploma – Giza, Egypt</p>
+    </nav>
+
+    <!-- Cover Section -->
+    <section id="cover" class="min-h-screen flex items-center justify-center gradient-bg tech-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Mohamed Mahmoud Emam</h1>
+            <div class="text-xl md:text-2xl text-blue-200 mb-8 typing-animation" id="typing-text">Data Scientist & AI Engineer</div>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-200">
+                Third-year Computer Science student at Zewail City, majoring in Data Science & AI. Passionate about ML, DL, NLP, and Computer Vision.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('projects')" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all glow">View My Work</button>
+                <button onclick="scrollToSection('contact')" class="px-8 py-3 border border-white/30 hover:bg-white/10 rounded-lg font-semibold transition-all">Get In Touch</button>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 4. Skills -->
-  <section id="skills" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-12">Skills</h2>
-      <div class="grid md:grid-cols-2 gap-12 text-left">
-        <div>
-          <h3 class="font-semibold text-xl mb-4">Programming</h3>
-          <p>Python, C++, Java, JavaScript, R</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+            </div>
+            <p class="text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
+                I am a third-year Computer Science student at Zewail City of Science and Technology, specializing in Data Science and AI. I have hands-on experience in data analysis, machine learning, deep learning, NLP, and computer vision. I am passionate about applying AI to solve real-world problems and continuously learning new technologies to enhance my skills.
+            </p>
         </div>
-        <div>
-          <h3 class="font-semibold text-xl mb-4">Frameworks & Tools</h3>
-          <p>TensorFlow, PyTorch, OpenCV, Keras, Scikit-learn, Matplotlib</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-4 text-center">Education</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-800 rounded-xl p-8 card-hover fade-in">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-2">BSc Computer Science - Data Science & AI</h3>
+                    <p class="text-gray-300 mb-2">Zewail City of Science and Technology</p>
+                    <p class="text-gray-400">10/2022 – 06/2026 | GPA: 3.1</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-8 card-hover fade-in">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-2">High School Diploma</h3>
+                    <p class="text-gray-300 mb-2">Genius Language School, Giza, Egypt</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-xl mb-4">Languages</h3>
-          <p>Arabic (native), English (B2)</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-4 text-center">Skills & Expertise</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8">Technical Skills</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>Python, C++, Java, JavaScript, R</li>
+                        <li>Machine Learning & Deep Learning</li>
+                        <li>Computer Vision (OpenCV, YOLO, ResNet)</li>
+                        <li>Natural Language Processing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8">Tools & Technologies</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>PyTorch, TensorFlow, Keras, Scikit-learn</li>
+                        <li>OpenCV, Matplotlib, NumPy, Pandas</li>
+                        <li>Hugging Face, Gradio, GitHub</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 5. Work Experience -->
-  <section id="experience" class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-8 text-center">Work Experience</h2>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold text-xl">Coding Instructor – iSchool</h3>
-        <p class="text-gray-600">July 2024</p>
-        <ul class="list-disc ml-6 mt-3 text-gray-700">
-          <li>Taught students aged 12–14 fundamentals of programming.</li>
-          <li>Covered variables, loops, conditionals, algorithms.</li>
-          <li>Encouraged problem-solving through projects.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-4 text-center">Work Experience</h2>
+            <div class="bg-gray-800 rounded-xl p-8 card-hover fade-in">
+                <h3 class="text-xl font-semibold text-blue-400 mb-2">Coding Instructor</h3>
+                <p class="text-gray-300 mb-2">iSchool</p>
+                <p class="text-gray-400 mb-4">07/2024</p>
+                <ul class="text-gray-300 space-y-2">
+                    <li>• Instructed students aged 12–14 in programming fundamentals</li>
+                    <li>• Delivered lessons on variables, loops, conditionals, and algorithms</li>
+                    <li>• Supported students in problem-solving and coding projects</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- 6. Offered Services -->
-  <section id="services" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-12">Offered Services</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 bg-gray-50 rounded-xl shadow">🤖 AI & Machine Learning</div>
-        <div class="p-6 bg-gray-50 rounded-xl shadow">📊 Data Analysis & Visualization</div>
-        <div class="p-6 bg-gray-50 rounded-xl shadow">🔍 Computer Vision & NLP</div>
-        <div class="p-6 bg-gray-50 rounded-xl shadow">🧑‍🏫 Teaching & Mentorship</div>
-      </div>
-    </div>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-4 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-xl p-6 card-hover fade-in">
+                    <h3 class="text-xl font-semibold mb-3">CaptionGo.AI</h3>
+                    <p class="text-gray-300 mb-4">Image Captioning web app with Transformers (ResNet152V2 + custom decoder). Deployed on Hugging Face Spaces.</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 card-hover fade-in">
+                    <h3 class="text-xl font-semibold mb-3">Drone Detection</h3>
+                    <p class="text-gray-300 mb-4">Deep learning model for drone detection/localization with InceptionV3. Achieved 84% validation accuracy.</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 card-hover fade-in">
+                    <h3 class="text-xl font-semibold mb-3">Person Tracking & Route Visualization</h3>
+                    <p class="text-gray-300 mb-4">YOLOv8 + OpenCV system to track and visualize movement paths of individuals in video.</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 card-hover fade-in">
+                    <h3 class="text-xl font-semibold mb-3">Activity Recognition</h3>
+                    <p class="text-gray-300 mb-4">Compared ML models (KNN, SVM, NN, Logistic Regression) for recognizing activities.</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 card-hover fade-in">
+                    <h3 class="text-xl font-semibold mb-3">Simple Search Engine</h3>
+                    <p class="text-gray-300 mb-4">Built a basic search engine using Vaswani dataset with TF-IDF & BERT query expansion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- 7. Projects -->
-  <section id="projects" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center">Projects</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 bg-white rounded-xl shadow">📷 CaptionGo.AI – Image Captioning</div>
-        <div class="p-6 bg-white rounded-xl shadow">🚁 Drone Detection using Deep Learning</div>
-        <div class="p-6 bg-white rounded-xl shadow">🧍 Person Tracking & Route Visualization (YOLOv8)</div>
-        <div class="p-6 bg-white rounded-xl shadow">📊 Activity Recognition with ML</div>
-        <div class="p-6 bg-white rounded-xl shadow">🔍 Simple Search Engine</div>
-      </div>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+            <p class="text-gray-300 mb-6">Reach out via email, phone, or connect with me on GitHub/LinkedIn.</p>
+            <p class="text-blue-400">📧 mohamedmahmoudemam23@gmail.com</p>
+            <p class="text-blue-400">📱 01018656519</p>
+            <p class="text-blue-400">🌍 Giza, Egypt (6th of October)</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://github.com/mohamed-7oda" class="text-blue-400">GitHub</a>
+                <a href="https://linkedin.com/in/mohamed-mahmoud-emam-03ba16263" class="text-blue-400">LinkedIn</a>
+                <a href="https://huggingface.co/spaces/mohamed7oda/image-captioning" class="text-blue-400">Hugging Face</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- 8. Achievements -->
-  <section id="achievements" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8">Achievements</h2>
-      <p class="text-lg text-gray-600">
-        🏆 Published multiple AI/Data Science projects on GitHub.  
-        🚀 Deployed apps on Hugging Face Spaces.  
-        🎯 Built successful prototypes (Image Captioning, Drone Detection).  
-      </p>
-    </div>
-  </section>
-
-  <!-- 9. Contact -->
-  <section id="contact" class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8">Contact Me</h2>
-      <p class="mb-4">📧 mohamedmahmoudemam23@gmail.com</p>
-      <p class="mb-4">📱 01018656519</p>
-      <p class="mb-4">🌍 Giza, Egypt</p>
-      <p class="mb-4">🐙 <a href="https://github.com/mohamed-7oda" class="text-purple-600">GitHub</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/mohamed-mahmoud-emam-03ba16263" class="text-purple-600">LinkedIn</a></p>
-    </div>
-  </section>
-
-  <!-- 10. Thank You -->
-  <section id="thankyou" class="py-20 gradient-bg text-white text-center">
-    <h2 class="text-4xl font-bold mb-4">Thank You!</h2>
-    <p class="text-lg">Let's build something impactful together 🚀</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
-    <p>&copy; 2025 Mohamed Mahmoud Emam. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Smooth scrolling
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
-      });
-    });
-    // Fade-in animations
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
-      });
-    },{threshold:0.1});
-    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-  </script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8 text-center">
+        <p class="text-gray-400">© 2024 Mohamed Mahmoud Emam. All rights reserved. Built with passion for AI innovation.</p>
+    </footer>
 </body>
 </html>
