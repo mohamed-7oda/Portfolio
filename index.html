@@ -126,7 +126,7 @@
                 Computer Science professional specializing in Data Science and AI, passionate about solving real world problems through intelligent solutions
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="https://drive.google.com/file/d/1n6njxrTZQoD7ZI52ioo2ORo2MIoPQ7s-/view?usp=sharing" target="_blank"class="px-8 py-3 border border-white/30 hover:bg-white/10 rounded-lg font-semibold transition-all">
+                <a href="https://drive.google.com/file/d/1uc0Wveiy-kCg8jyTKf55E0Uy_TZBS9Ak/view?usp=sharing" target="_blank"class="px-8 py-3 border border-white/30 hover:bg-white/10 rounded-lg font-semibold transition-all">
                     My Resume
                 </a>
                 <button onclick="scrollToSection('projects')" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all glow">
@@ -268,32 +268,33 @@
                     Zewail University of Science and Technology
                 </h3>
                 <p class="text-gray-300 mb-1">Bachelor Degree in Computer Science & Artificial Intelligence</p>
-                <p class="text-gray-400 text-sm">Major: Data Science & Artificial Intelligence</p>
+                <p class="text-gray-400 text-sm">Majoring in Data Science & Artificial Intelligence</p>
                 </div>
             </div>
             </div>
         </div>
 
-        <!-- High School -->
-        <div class="ml-10 group relative">
-            <!-- Dot -->
-            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-full shadow-lg animate-pulse"></div>
+        <!-- Artificial Intelligence Course -->
+        <div class="ml-10 group relative"> 
+            <!-- Dot --> 
+            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-full shadow-lg animate-pulse"></div> 
 
-            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div>
-                <h3 class="text-2xl font-semibold text-green-400 mb-2 group-hover:text-teal-400 transition-colors">
-                    Genius Language School
-                </h3>
-                <p class="text-gray-300 mb-1">High School Diploma</p>
-                <p class="text-gray-400 text-sm">Giza, Egypt</p>
-                </div>
-                <div class="text-right mt-4 md:mt-0">
-                <span class="text-gray-400 group-hover:text-white transition-colors text-sm font-medium">Graduated</span>
-                </div>
-            </div>
-            </div>
+            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2"> 
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between"> 
+                    <div> 
+                        <h3 class="text-2xl font-semibold text-green-400 mb-2 group-hover:text-teal-400 transition-colors"> 
+                            Information Technology Institute (ITI)
+                        </h3> 
+                        <p class="text-gray-300 mb-1">Artificial Intelligence Course (90 hrs)</p> 
+                        <p class="text-gray-400 text-sm">Covered data preparation, machine learning, deep learning, and applied AI projects</p> 
+                    </div> 
+                    <div class="text-right mt-4 md:mt-0"> 
+                        <span class="text-gray-400 group-hover:text-white transition-colors text-sm font-medium">Completed Sept 2025</span> 
+                    </div> 
+                </div> 
+            </div> 
         </div>
+
 
         </div>
     </div>
@@ -396,6 +397,40 @@
         <div class="relative border-l-4 border-transparent bg-gradient-to-b from-blue-500/30 to-purple-600/30 rounded-lg p-2">
 
         <!-- Job Card -->
+        <div class="ml-10 mb-12 group relative"> 
+            <!-- Dot --> 
+            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div> 
+
+            <!-- Card --> 
+            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700  
+                        hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/30  
+                        transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02] cursor-pointer" 
+                onclick="this.querySelector('.details').classList.toggle('hidden')"> 
+
+                <!-- Job Header --> 
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4"> 
+                    <div> 
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors"> 
+                            National Telecommunication Institute (NTI)
+                        </h3> 
+                        <p class="text-gray-300">NLP Intern</p> 
+                        <p class="text-gray-400 text-sm">Egypt</p> 
+                    </div> 
+                </div> 
+
+                <!-- Expandable Details --> 
+                <div class="details hidden mt-4 text-gray-300 leading-relaxed"> 
+                    Completed a 120-hour summer internship focused on Natural Language Processing (NLP), 
+                    exploring advanced topics such as Retrieval-Augmented Generation (RAG), 
+                    LLM fine-tuning with LoRA, LangChain, and regex. 
+                    Contributed to real-world projects involving chatbot development and API integration 
+                    using Cohere and Hugging Face.
+                </div> 
+                <p class="mt-3 text-sm text-purple-400 italic">Click to expand ▼</p> 
+            </div> 
+        </div>
+
+        <!-- Job Card -->
         <div class="ml-10 mb-12 group relative">
             <!-- Dot -->
             <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div>
@@ -410,24 +445,56 @@
             <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                 <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors">
-                    Coding Instructor
+                    iSchool Company
                 </h3>
-                <p class="text-gray-300">iSchool</p>
+                <p class="text-gray-300">Coding Instructor</p>
                 <p class="text-gray-400 text-sm">Egypt</p>
                 </div>
             </div>
 
             <!-- Expandable Details -->
             <div class="details hidden mt-4">
-                <ul class="text-gray-300 space-y-2">
-                <li>• Instructed students aged 12–14 in programming fundamentals through live, interactive sessions</li>
-                <li>• Delivered age-appropriate lessons covering variables, loops, conditionals, and basic algorithms</li>
-                <li>• Supported students in developing problem-solving skills and building confidence through hands-on coding projects</li>
-                </ul>
+                Instructed students aged 12–14 in the fundamentals of programming through live, interactive
+                sessions, introducing core concepts such as variables, loops, conditionals, and algorithms, while
+                guiding them in hands on projects to strengthen problem solving skills and confidence in coding.
             </div>
             <p class="mt-3 text-sm text-purple-400 italic">Click to expand ▼</p>
             </div>
         </div>
+
+        <!-- Job Card --> 
+        <div class="ml-10 mb-12 group relative">  
+            <!-- Dot -->  
+            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div>  
+
+            <!-- Card -->  
+            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700   
+                        hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/30   
+                        transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02] cursor-pointer"  
+                onclick="this.querySelector('.details').classList.toggle('hidden')">  
+
+                <!-- Job Header -->  
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">  
+                    <div>  
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors">  
+                            Ministry of Communications and Information Technology (MCIT)
+                        </h3>  
+                        <p class="text-gray-300">Data Analysis Trainee</p>  
+                        <p class="text-gray-400 text-sm">Egypt</p>  
+                    </div>  
+                </div>  
+
+                <!-- Expandable Details -->  
+                <div class="details hidden mt-4 text-gray-300 leading-relaxed">  
+                    Completed the Data Analysis Training Program at the Ministry of Communications and 
+                    Information Technology (MCIT), Egypt, gaining practical experience in Power BI for 
+                    data transformation, visualization, and insight generation to support data-driven 
+                    decision-making.
+                </div>  
+                <p class="mt-3 text-sm text-purple-400 italic">Click to expand ▼</p>  
+            </div>  
+        </div>
+
 
         </div>
     </div>
@@ -514,41 +581,8 @@
 
             <!-- Projects Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
+
                 <!-- Project 1 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-red-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-yellow-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🤖</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/30 to-yellow-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-red-400 transition">EMAM – AI Chatbot</h3>
-                        <p class="text-gray-300 mb-4">Built a custom chatbot using Cohere API + LangChain with chat history, FastAPI backend, and Streamlit frontend.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">LangChain</span>
-                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">FastAPI</span>
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Streamlit</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Cohere API</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://chatbot-deployment-mq4ev9su5isyhekcdenjws.streamlit.app/" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition">
-                                🚀 Try it here
-                            </a>
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_try-out-my-chatbot-from-here-https-activity-7364622071122845698-N37U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank" 
-                            class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="https://github.com/mohamed-7oda/ChatBot" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                        
-                <!-- Project 2 -->
                 <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
                     <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
                         <span class="text-5xl">🖼️</span>
@@ -580,8 +614,7 @@
                     </div>
                 </div>
 
-
-                <!-- Project 3 -->
+                <!-- Project 2 -->
                 <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
                     <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
                         <span class="text-5xl">🚶</span>
@@ -608,9 +641,9 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Project 4 -->
+                 
+                
+                <!-- Project 3 -->
                 <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-green-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
                     <div class="h-48 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
                         <span class="text-5xl">🚁</span>
@@ -638,39 +671,139 @@
                     </div>
                 </div>
 
-                <!-- Project 5 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-pink-500 to-indigo-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">📦</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/30 to-indigo-600/30 opacity-0 group-hover:opacity-100 transition"></div>
+                <!-- Project 4 -->
+                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-red-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-5xl">📚</span>
+                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/30 to-orange-600/30 opacity-0 group-hover:opacity-100 transition"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-pink-400 transition">Vector Quantization Tool</h3>
-                        <p class="text-gray-300 mb-4">Developed Java-based tool for compressing training and testing image datasets using vector quantization.</p>
+                        <h3 class="text-xl font-semibold mb-3 group-hover:text-red-400 transition">Research Paper Summarizer & Chatbot Using RAG</h3>
+                        <p class="text-gray-300 mb-4">
+                            Developed an AI platform that summarizes, translates, and chats with research papers using RAG, Cohere LLM, FastAPI, and Streamlit, enabling multilingual translation, text-to-speech, and intelligent Q&A.
+                        </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-pink-600/20 text-pink-300 rounded text-xs">Java</span>
-                            <span class="px-2 py-1 bg-indigo-600/20 text-indigo-300 rounded text-xs">Image Processing</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Algorithms</span>
+                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">FastAPI</span>
+                            <span class="px-2 py-1 bg-orange-600/20 text-orange-300 rounded text-xs">Streamlit</span>
+                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">LangChain</span>
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Cohere LLM</span>
+                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">RAG</span>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex gap-3 flex-wrap">
+                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_ever-felt-like-reading-research-papers-is-activity-7366155457188478976-8bu8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank"
+                            class="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg font-medium hover:from-red-600 hover:to-orange-700 transition">
+                                🎬 Demo Video
+                            </a>
+                            <a href="https://github.com/mohamed-7oda/Research-Paper-Summarizer" target="_blank"
+                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
+                                📂 GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 6 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🌐</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 opacity-0 group-hover:opacity-100 transition"></div>
+
+                <!-- Project 5 -->
+                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-5xl">📈</span>
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-teal-600/30 opacity-0 group-hover:opacity-100 transition"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-cyan-400 transition">Personal Portfolio Website</h3>
-                        <p class="text-gray-300 mb-4">Fully responsive portfolio built with Tailwind, interactive animations, and deployed on GitHub Pages.</p>
+                        <h3 class="text-xl font-semibold mb-3 group-hover:text-blue-400 transition">Comparative Analysis of ML Models for Activity Recognition</h3>
+                        <p class="text-gray-300 mb-4">
+                            Conducted a large-scale study on human activity recognition using the MHEALTH dataset, comparing KNN, SVM, Logistic Regression, and ANN models built with TensorFlow for accuracy, precision, and F1-score evaluation.
+                        </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-cyan-600/20 text-cyan-300 rounded text-xs">TailwindCSS</span>
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Frontend</span>
-                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">Responsive</span>
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">TensorFlow</span>
+                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Keras</span>
+                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">Scikit-learn</span>
+                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">Matplotlib</span>
+                            <span class="px-2 py-1 bg-pink-600/20 text-pink-300 rounded text-xs">Seaborn</span>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex gap-3 flex-wrap">
+                            <a href="https://github.com/mohamed-7oda/Comparative-Analysis-of-Machine-Learning-Models-for-Activity-Recognition" target="_blank"
+                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
+                                📂 GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Project 6 -->
+                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-red-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-yellow-600 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-5xl">🤖</span>
+                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/30 to-yellow-600/30 opacity-0 group-hover:opacity-100 transition"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 group-hover:text-red-400 transition">EMAM – AI Chatbot</h3>
+                        <p class="text-gray-300 mb-4">Built a custom chatbot using Cohere API + LangChain with chat history, FastAPI backend, and Streamlit frontend.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">LangChain</span>
+                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">FastAPI</span>
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Streamlit</span>
+                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Cohere API</span>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex gap-3 flex-wrap">
+                            <a href="https://chatbot-deployment-mq4ev9su5isyhekcdenjws.streamlit.app/" target="_blank" 
+                            class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition">
+                                🚀 Try it here
+                            </a>
+                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_try-out-my-chatbot-from-here-https-activity-7364622071122845698-N37U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank" 
+                            class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
+                                🎬 Demo Video
+                            </a>
+                            <a href="https://github.com/mohamed-7oda/ChatBot" target="_blank" 
+                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
+                                📂 GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Project 7 -->
+                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-5xl">🧠</span>
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-600/30 opacity-0 group-hover:opacity-100 transition"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 group-hover:text-purple-400 transition">
+                            CV Retrieval & Matching System (RAG)
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Built an AI system that matches job descriptions with candidate CVs using RAG.  
+                            Ranks applicants by relevance and provides AI-generated recruiter evaluations.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">RAG</span>
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">LangChain</span>
+                            <span class="px-2 py-1 bg-pink-600/20 text-pink-300 rounded text-xs">Cohere LLM</span>
+                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">ChromaDB</span>
+                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">FastAPI</span>
+                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">Streamlit</span>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex gap-3 flex-wrap">
+                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_are-you-hiring-and-have-many-cvs-but-don-activity-7362804075257565184-yZU0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank"
+                            class="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg font-medium hover:from-red-600 hover:to-orange-700 transition">
+                                🎬 Demo Video
+                            </a>
+                            <a href="https://github.com/mohamed-7oda/CV-match-chatbot-using-RAG"
+                            target="_blank"
+                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
+                                📂 GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
