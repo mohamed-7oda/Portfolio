@@ -1,1226 +1,1037 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Mahmoud Emam - AI Engieer & Data Scientist Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .tech-grid {
-            background-image: 
-                linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-        
-        .glow {
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .typing-animation {
-            border-right: 2px solid #667eea;
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { border-color: transparent; }
-            51%, 100% { border-color: #667eea; }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .skill-bar {
-            width: 0%;
-            transition: width 2s ease-in-out;
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Mohamed Mahmoud Emam — AI / Machine Learning Engineer. Portfolio of NLP, computer vision, RAG, and explainable AI projects." />
+<title>Mohamed Mahmoud Emam — AI / ML Engineer</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:     '#07090f',  /* page background */
+          panel:   '#0d111a',  /* card background */
+          panel2:  '#131825',
+          line:    '#1f2433',
+          neon:    '#22d3ee',  /* cyan */
+          violet:  '#8b5cf6',
+          pink:    '#ec4899',
+          lime:    '#a3e635',
+          amber:   '#f59e0b',
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular'],
+        },
+      }
+    }
+  }
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #07090f;
+    color: #e5e7eb;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Gradient text */
+  .grad-text {
+    background: linear-gradient(90deg, #22d3ee 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Animated grid */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Glow ring */
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.25),
+      0 0 30px rgba(34, 211, 238, 0.18),
+      0 0 60px rgba(139, 92, 246, 0.12);
+  }
+  .glow-violet {
+    box-shadow:
+      0 0 0 1px rgba(139, 92, 246, 0.3),
+      0 0 40px rgba(139, 92, 246, 0.25);
+  }
+
+  /* Card hover */
+  .card {
+    background: linear-gradient(180deg, #0d111a 0%, #0b0f17 100%);
+    border: 1px solid #1f2433;
+    transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover {
+    border-color: rgba(34, 211, 238, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 50px -20px rgba(34, 211, 238, 0.35);
+  }
+
+  /* Nav active underline */
+  .nav-link { position: relative; transition: color .2s; }
+  .nav-link::after {
+    content: ''; position: absolute; bottom: -6px; left: 0;
+    height: 2px; width: 0;
+    background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+    transition: width .25s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link.active, .nav-link:hover { color: #fff; }
+
+  /* Section reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Tag pill */
+  .pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 500; letter-spacing: .02em;
+    border: 1px solid #1f2433; background: rgba(255,255,255,0.02);
+    color: #cbd5e1;
+  }
+  .pill-cyan   { border-color: rgba(34,211,238,.35); color: #67e8f9; background: rgba(34,211,238,.06); }
+  .pill-violet { border-color: rgba(139,92,246,.35); color: #c4b5fd; background: rgba(139,92,246,.06); }
+  .pill-pink   { border-color: rgba(236,72,153,.35); color: #f9a8d4; background: rgba(236,72,153,.06); }
+  .pill-lime   { border-color: rgba(163,230,53,.35); color: #d9f99d; background: rgba(163,230,53,.06); }
+  .pill-amber  { border-color: rgba(245,158,11,.35); color: #fcd34d; background: rgba(245,158,11,.06); }
+
+  /* Buttons */
+  .btn-primary {
+    background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+    color: #06070d;
+    font-weight: 600;
+    transition: transform .15s, box-shadow .15s, filter .15s;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(139,92,246,.6); filter: brightness(1.05); }
+  .btn-ghost {
+    border: 1px solid #2a3142;
+    color: #e5e7eb;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-ghost:hover { border-color: #22d3ee; background: rgba(34,211,238,.06); }
+
+  /* Mobile menu */
+  #mobile-menu { transform: translateY(-110%); transition: transform .35s ease; }
+  #mobile-menu.open { transform: translateY(0); }
+
+  /* Hero blob */
+  .blob {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none;
+  }
+
+  /* Marquee */
+  @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { animation: marq 35s linear infinite; }
+
+  /* Focus */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #22d3ee; outline-offset: 3px; border-radius: 6px;
+  }
+
+  /* SVG icon helper */
+  .ico { width: 18px; height: 18px; }
+</style>
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold gradient-text">Mohamed Mahmoud Emam</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#cover" class="nav-link hover:text-blue-400">Home</a>
-                    <a href="#about" class="nav-link hover:text-blue-400">About</a>
-                    <a href="#skills" class="nav-link hover:text-blue-400">Skills</a>
-                    <a href="#experience" class="nav-link hover:text-blue-400">Experience</a>
-                    <a href="#projects" class="nav-link hover:text-blue-400">Projects</a>
-                    <a href="#contact" class="nav-link hover:text-blue-400">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Cover Section -->
-    <section id="cover" class="min-h-screen flex items-center justify-center gradient-bg tech-grid relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="relative z-10 text-center px-4">
-            <div class="mb-8">
-                <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/20 glow">
-                    <img src="myphoto.jpg" alt="Mohamed Mahmoud Emam" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="w-full h-full bg-white/10 backdrop-blur-sm flex items-center justify-center" style="display: none;">
-                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Mohamed Mahmoud Emam</h1>
-            <div class="text-xl md:text-2xl text-blue-200 mb-8 typing-animation" id="typing-text">Data Scientist & AI Engineer</div>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-200">
-                Computer Science professional specializing in Data Science and AI, passionate about solving real world problems through intelligent solutions
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="https://drive.google.com/file/d/1uc0Wveiy-kCg8jyTKf55E0Uy_TZBS9Ak/view?usp=sharing" target="_blank"class="px-8 py-3 border border-white/30 hover:bg-white/10 rounded-lg font-semibold transition-all">
-                    My Resume
-                </a>
-                <button onclick="scrollToSection('projects')" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all glow">
-                    View My Work
-                </button>
-                <button onclick="scrollToSection('contact')" class="px-8 py-3 border border-white/30 hover:bg-white/10 rounded-lg font-semibold transition-all">
-                    Get In Touch
-                </button>
-            </div>
-            <div class="flex justify-center space-x-6">
-                <a href="https://github.com/mohamed-7oda" target="_blank" class="text-white/70 hover:text-white transition-colors group">
-                    <div class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-all">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        <span class="text-sm font-medium">GitHub</span>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/mohamed-mahmoud-emam-03ba16263/" target="_blank" class="text-white/70 hover:text-white transition-colors group">
-                    <div class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-all">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                        <span class="text-sm font-medium">LinkedIn</span>
-                    </div>
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohamedmahmoudemam23@gmail.com" target="_blank" class="text-white/70 hover:text-white transition-colors group">
-                    <div class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-all">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-2 .9-2 
-                            2v12c0 1.1.9 2 2 2h16c1.1 0 
-                            2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
-                            4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        <span class="text-sm font-medium">Email</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+<body class="bg-ink text-gray-200">
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-600/10 blur-3xl opacity-40"></div>
-    
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-extrabold mb-4 tracking-wide text-white relative inline-block">
-            About Me
-            <span class="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></span>
-        </h2>
-        </div>
+<!-- ───────── NAV ───────── -->
+<nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-ink/70 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="#home" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-neon to-violet flex items-center justify-center font-mono font-bold text-ink text-sm">M</span>
+        <span class="font-semibold tracking-tight hidden sm:block">Mohamed Emam</span>
+      </a>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-        
-        <!-- Photo Card -->
-        <div class="fade-in flex justify-center">
-            <div class="group relative w-81 h-81 rounded-2xl overflow-hidden border-4 border-gradient-to-br from-blue-500 to-purple-600 shadow-2xl transform transition-transform duration-500 hover:rotate-2 hover:scale-105">
-            <img src="myphoto3.jpg" alt="Mohamed Mahmoud Emam" class="w-full h-full object-cover" 
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center hidden">
-                <svg class="w-32 h-32 text-white opacity-90 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-            </div>
-            <!-- Glow effect -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
-        </div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
 
-        <!-- About Text -->
-        <div class="fade-in">
-            <!-- Typing Animation -->
-            <h3 class="text-2xl font-semibold mb-6 text-blue-400">
-            <span class="typing">Passionate Data Scientist & AI Engineer</span>
-            </h3>
+      <div class="hidden md:block">
+        <a href="https://drive.google.com/file/d/1uc0Wveiy-kCg8jyTKf55E0Uy_TZBS9Ak/view?usp=sharing" target="_blank" rel="noopener"
+           class="btn-primary inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
+      </div>
 
-            <p class="text-gray-300 mb-6 leading-relaxed">
-                Hi, I’m Mohamed Mahmoud Emam! I’m passionate about using Data Science and AI to turn complex data into smart solutions that solve real-world problems. Over time, I’ve built solid skills in data analysis, machine learning, deep learning, NLP, and computer vision.
-            </p>
-            <p class="text-gray-300 mb-6 leading-relaxed">
-                Through hands-on projects, I’ve learned how to create AI driven solutions that don’t just work in theory but make a real difference. I love tackling challenges, learning new things, and finding practical ways to apply technology. My goal is to bring value by combining technical skills with creativity to help solve meaningful problems.
-            </p>
-
-            <!-- Animated Badges -->
-            <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm animate-pulse">Problem Solver</span>
-            <span class="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-sm animate-bounce">Data Enthusiast</span>
-            <span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-sm animate-pulse">AI Innovator</span>
-            </div>
-        </div>
-        </div>
+      <button id="menu-btn" class="md:hidden w-10 h-10 grid place-items-center rounded-lg border border-line" aria-label="Open menu">
+        <svg id="menu-icon" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
-    </section>
+  </div>
 
-    <style>
-    /* Simple typing animation */
-    .typing {
-    border-right: 2px solid #60a5fa;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    animation: typing 4s steps(40, end), blink .8s infinite;
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden absolute inset-x-0 top-16 bg-ink/95 backdrop-blur-xl border-b border-line">
+    <div class="px-5 py-5 flex flex-col gap-1 text-sm">
+      <a href="#home"        class="mob-link py-3 px-3 rounded-lg hover:bg-panel">Home</a>
+      <a href="#about"       class="mob-link py-3 px-3 rounded-lg hover:bg-panel">About</a>
+      <a href="#skills"      class="mob-link py-3 px-3 rounded-lg hover:bg-panel">Skills</a>
+      <a href="#experience"  class="mob-link py-3 px-3 rounded-lg hover:bg-panel">Experience</a>
+      <a href="#projects"    class="mob-link py-3 px-3 rounded-lg hover:bg-panel">Projects</a>
+      <a href="#achievements"class="mob-link py-3 px-3 rounded-lg hover:bg-panel">Achievements</a>
+      <a href="#contact"     class="mob-link py-3 px-3 rounded-lg hover:bg-panel">Contact</a>
+      <a href="https://drive.google.com/file/d/1uc0Wveiy-kCg8jyTKf55E0Uy_TZBS9Ak/view?usp=sharing" target="_blank" rel="noopener"
+         class="btn-primary mt-3 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg">Download Resume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────── HERO ───────── -->
+<section id="home" class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-50"></div>
+  <div class="blob bg-neon w-[420px] h-[420px] -top-20 -left-20"></div>
+  <div class="blob bg-violet w-[460px] h-[460px] top-1/4 -right-20"></div>
+  <div class="blob bg-pink w-[300px] h-[300px] bottom-0 left-1/3 opacity-20"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+    <div class="lg:col-span-7 reveal">
+      <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-line bg-panel/60 text-xs text-gray-400">
+        <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
+        Open to AI / ML Engineer roles — remote, hybrid, on-site
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
+        Building <span class="grad-text">intelligent systems</span><br class="hidden sm:block"/>
+        that actually ship.
+      </h1>
+
+      <p class="text-base sm:text-lg text-gray-400 max-w-2xl mb-8 leading-relaxed">
+        I'm <span class="text-white font-semibold">Mohamed Mahmoud Emam</span> — a final-year Data Science & AI student at Zewail City with hands-on experience deploying NLP, computer vision, and explainable AI systems. From RAG pipelines to Hugging Face deployments, I build models that move from notebook to production.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-8">
+        <a href="#projects" class="btn-primary inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm">
+          View My Work
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm">Get in Touch</a>
+        <a href="https://drive.google.com/file/d/1uc0Wveiy-kCg8jyTKf55E0Uy_TZBS9Ak/view?usp=sharing" target="_blank" rel="noopener"
+           class="btn-ghost inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Resume
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+        <a href="https://github.com/mohamed-7oda" target="_blank" rel="noopener" class="hover:text-white flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4 1 0 2 .1 3 .4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4 0-6.6-5.4-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mohamed-mahmoud-emam/" target="_blank" rel="noopener" class="hover:text-white flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:mohamedmahmoudemam23@gmail.com" class="hover:text-white flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+
+    <!-- Right card: code-style snapshot -->
+    <div class="lg:col-span-5 reveal">
+      <div class="card rounded-2xl p-1 glow-ring">
+        <div class="bg-panel2 rounded-2xl overflow-hidden">
+          <!-- Window header -->
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-line">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber/80"></span>
+            <span class="w-3 h-3 rounded-full bg-lime/80"></span>
+            <span class="ml-3 text-xs text-gray-500 font-mono">about.py</span>
+          </div>
+          <pre class="font-mono text-[13px] leading-relaxed p-5 overflow-x-auto"><span class="text-pink">class</span> <span class="text-neon">Engineer</span>:
+    name      = <span class="text-lime">"Mohamed Mahmoud Emam"</span>
+    role      = <span class="text-lime">"AI / ML Engineer"</span>
+    location  = <span class="text-lime">"Cairo, Egypt"</span>
+    edu       = <span class="text-lime">"Zewail City — DS & AI"</span>
+    graduates = <span class="text-amber">2026</span>
+
+    stack = {
+      <span class="text-violet">"ml"</span>:   [<span class="text-lime">"PyTorch"</span>, <span class="text-lime">"TensorFlow"</span>, <span class="text-lime">"scikit-learn"</span>],
+      <span class="text-violet">"nlp"</span>:  [<span class="text-lime">"LangChain"</span>, <span class="text-lime">"RAG"</span>, <span class="text-lime">"LoRA"</span>, <span class="text-lime">"FAISS"</span>],
+      <span class="text-violet">"cv"</span>:   [<span class="text-lime">"YOLOv8"</span>, <span class="text-lime">"OpenCV"</span>, <span class="text-lime">"ResNet"</span>],
+      <span class="text-violet">"xai"</span>:  [<span class="text-lime">"SHAP"</span>, <span class="text-lime">"LIME"</span>, <span class="text-lime">"PDP"</span>, <span class="text-lime">"ICE"</span>],
+      <span class="text-violet">"data"</span>: [<span class="text-lime">"Power BI"</span>, <span class="text-lime">"SQL"</span>, <span class="text-lime">"pandas"</span>],
     }
 
-    @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-    }
-    @keyframes blink {
-    50% { border-color: transparent }
-    }
-    </style>
-
-
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-extrabold mb-4 text-white tracking-wide">Education</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+    <span class="text-pink">def</span> <span class="text-neon">status</span>(self):
+        <span class="text-pink">return</span> <span class="text-lime">"open_to_work"</span></pre>
         </div>
+      </div>
 
-        <!-- Timeline container -->
-        <div class="relative border-l-4 border-transparent bg-gradient-to-b from-blue-500/30 to-purple-600/30 rounded-lg p-2">
-        
-        <!-- Bachelor -->
-        <div class="ml-10 mb-12 group relative">
-            <!-- Dot -->
-            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div>
-
-            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div>
-                <h3 class="text-2xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors">
-                    Zewail University of Science and Technology
-                </h3>
-                <p class="text-gray-300 mb-1">Bachelor Degree in Computer Science & Artificial Intelligence</p>
-                <p class="text-gray-400 text-sm">Majoring in Data Science & Artificial Intelligence</p>
-                </div>
-            </div>
-            </div>
+      <!-- Stat row -->
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold grad-text">7+</div>
+          <div class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">Projects shipped</div>
         </div>
-
-        <!-- Artificial Intelligence Course -->
-        <div class="ml-10 group relative"> 
-            <!-- Dot --> 
-            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-full shadow-lg animate-pulse"></div> 
-
-            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2"> 
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between"> 
-                    <div> 
-                        <h3 class="text-2xl font-semibold text-green-400 mb-2 group-hover:text-teal-400 transition-colors"> 
-                            Information Technology Institute (ITI)
-                        </h3> 
-                        <p class="text-gray-300 mb-1">Artificial Intelligence Course (90 hrs)</p> 
-                        <p class="text-gray-400 text-sm">Covered data preparation, machine learning, deep learning, and applied AI projects</p> 
-                    </div> 
-                    <div class="text-right mt-4 md:mt-0"> 
-                        <span class="text-gray-400 group-hover:text-white transition-colors text-sm font-medium">Completed Sept 2025</span> 
-                    </div> 
-                </div> 
-            </div> 
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold grad-text">4</div>
+          <div class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">Internships & TA</div>
         </div>
-
-
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold grad-text">6</div>
+          <div class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">Certifications</div>
         </div>
+      </div>
     </div>
-    </section>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-600/10 blur-3xl opacity-40"></div>
-        
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <!-- Section Header -->
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold mb-4 text-white">Skills & Expertise</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-                    A blend of technical expertise and hands-on experience in building intelligent solutions using AI, ML, and modern tools.
-                </p>
-            </div>
-
-            <!-- Skills Grid -->
-            <div class="grid md:grid-cols-2 gap-12">
-                
-                <!-- Technical Expertise -->
-                <div class="space-y-6 fade-in">
-                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">Core Expertise</h3>
-                    <div class="grid gap-6">
-                        <div class="p-6 bg-gray-700/40 rounded-xl shadow-lg border border-transparent hover:border-blue-500/60 hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2 hover:scale-105 group">
-                            <h4 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">Machine Learning & AI</h4>
-                            <p class="text-gray-400 text-sm">Experience with supervised, unsupervised, and deep learning models for real-world applications.</p>
-                        </div>
-                        <div class="p-6 bg-gray-700/40 rounded-xl shadow-lg border border-transparent hover:border-purple-500/60 hover:shadow-purple-500/20 transition-all transform hover:-translate-y-2 hover:scale-105 group">
-                            <h4 class="text-lg font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">Deep Learning & Computer Vision</h4>
-                            <p class="text-gray-400 text-sm">Hands-on work with CNNs, transfer learning, and image processing using TensorFlow and PyTorch.</p>
-                        </div>
-                        <div class="p-6 bg-gray-700/40 rounded-xl shadow-lg border border-transparent hover:border-green-500/60 hover:shadow-green-500/20 transition-all transform hover:-translate-y-2 hover:scale-105 group">
-                            <h4 class="text-lg font-semibold text-white mb-2 group-hover:text-green-400 transition-colors">Natural Language Processing</h4>
-                            <p class="text-gray-400 text-sm">Practical knowledge in text classification, transformers, and building NLP pipelines.</p>
-                        </div>
-                        <div class="p-6 bg-gray-700/40 rounded-xl shadow-lg border border-transparent hover:border-yellow-500/60 hover:shadow-yellow-500/20 transition-all transform hover:-translate-y-2 hover:scale-105 group">
-                            <h4 class="text-lg font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors">Data Analysis & Visualization</h4>
-                            <p class="text-gray-400 text-sm">Strong background in data cleaning, analytics, and creating compelling visualizations.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools & Technologies -->
-                <div class="fade-in">
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-400">Tools & Technologies</h3>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-6">
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-blue-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-bounce">🐍</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">Python</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-red-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-spin">🔥</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">PyTorch</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-purple-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-pulse">🧠</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">TensorFlow</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-green-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-bounce">👁️</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">OpenCV</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-pink-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-spin">📊</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">Scikit-learn</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-orange-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-bounce">📈</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">Matplotlib</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-yellow-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-spin">☕</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">Java</div>
-                        </div>
-                        <div class="bg-gray-700/50 rounded-lg p-4 text-center hover:scale-110 hover:bg-indigo-600/20 transition-all transform group">
-                            <div class="text-2xl group-hover:animate-bounce">⚡</div>
-                            <div class="text-sm mt-2 text-gray-300 group-hover:text-white">JavaScript</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Work Experience Section -->
-    <section id="experience" class="py-20 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-extrabold mb-4 text-white tracking-wide">Work Experience</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-        </div>
-
-        <!-- Timeline Container -->
-        <div class="relative border-l-4 border-transparent bg-gradient-to-b from-blue-500/30 to-purple-600/30 rounded-lg p-2">
-
-        <!-- Job Card -->
-        <div class="ml-10 mb-12 group relative"> 
-            <!-- Dot --> 
-            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div> 
-
-            <!-- Card --> 
-            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700  
-                        hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/30  
-                        transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02] cursor-pointer" 
-                onclick="this.querySelector('.details').classList.toggle('hidden')"> 
-
-                <!-- Job Header --> 
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4"> 
-                    <div> 
-                        <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors"> 
-                            National Telecommunication Institute (NTI)
-                        </h3> 
-                        <p class="text-gray-300">NLP Intern</p> 
-                        <p class="text-gray-400 text-sm">Egypt</p> 
-                    </div> 
-                </div> 
-
-                <!-- Expandable Details --> 
-                <div class="details hidden mt-4 text-gray-300 leading-relaxed"> 
-                    Completed a 120-hour summer internship focused on Natural Language Processing (NLP), 
-                    exploring advanced topics such as Retrieval-Augmented Generation (RAG), 
-                    LLM fine-tuning with LoRA, LangChain, and regex. 
-                    Contributed to real-world projects involving chatbot development and API integration 
-                    using Cohere and Hugging Face.
-                </div> 
-                <p class="mt-3 text-sm text-purple-400 italic">Click to expand ▼</p> 
-            </div> 
-        </div>
-
-        <!-- Job Card -->
-        <div class="ml-10 mb-12 group relative">
-            <!-- Dot -->
-            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div>
-
-            <!-- Card -->
-            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700 
-                        hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/30 
-                        transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02] cursor-pointer"
-                onclick="this.querySelector('.details').classList.toggle('hidden')">
-
-            <!-- Job Header -->
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                <div>
-                <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors">
-                    iSchool Company
-                </h3>
-                <p class="text-gray-300">Coding Instructor</p>
-                <p class="text-gray-400 text-sm">Egypt</p>
-                </div>
-            </div>
-
-            <!-- Expandable Details -->
-            <div class="details hidden mt-4">
-                Instructed students aged 12–14 in the fundamentals of programming through live, interactive
-                sessions, introducing core concepts such as variables, loops, conditionals, and algorithms, while
-                guiding them in hands on projects to strengthen problem solving skills and confidence in coding.
-            </div>
-            <p class="mt-3 text-sm text-purple-400 italic">Click to expand ▼</p>
-            </div>
-        </div>
-
-        <!-- Job Card --> 
-        <div class="ml-10 mb-12 group relative">  
-            <!-- Dot -->  
-            <div class="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-pulse"></div>  
-
-            <!-- Card -->  
-            <div class="bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 border border-gray-700   
-                        hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/30   
-                        transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02] cursor-pointer"  
-                onclick="this.querySelector('.details').classList.toggle('hidden')">  
-
-                <!-- Job Header -->  
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">  
-                    <div>  
-                        <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-purple-400 transition-colors">  
-                            Ministry of Communications and Information Technology (MCIT)
-                        </h3>  
-                        <p class="text-gray-300">Data Analysis Trainee</p>  
-                        <p class="text-gray-400 text-sm">Egypt</p>  
-                    </div>  
-                </div>  
-
-                <!-- Expandable Details -->  
-                <div class="details hidden mt-4 text-gray-300 leading-relaxed">  
-                    Completed the Data Analysis Training Program at the Ministry of Communications and 
-                    Information Technology (MCIT), Egypt, gaining practical experience in Power BI for 
-                    data transformation, visualization, and insight generation to support data-driven 
-                    decision-making.
-                </div>  
-                <p class="mt-3 text-sm text-purple-400 italic">Click to expand ▼</p>  
-            </div>  
-        </div>
-
-
-        </div>
+<!-- ───────── TECH MARQUEE ───────── -->
+<section class="border-y border-line bg-panel/40 overflow-hidden">
+  <div class="py-5 flex items-center gap-3">
+    <span class="text-xs uppercase tracking-widest text-gray-500 pl-5 sm:pl-8 shrink-0">Tech stack</span>
+    <div class="overflow-hidden flex-1">
+      <div class="marquee-track flex gap-10 whitespace-nowrap text-sm text-gray-400 font-mono">
+        <span>Python</span><span>·</span><span>PyTorch</span><span>·</span><span>TensorFlow</span><span>·</span><span>Hugging Face</span><span>·</span><span>LangChain</span><span>·</span><span>FAISS</span><span>·</span><span>OpenCV</span><span>·</span><span>YOLOv8</span><span>·</span><span>SHAP</span><span>·</span><span>Power BI</span><span>·</span><span>FastAPI</span><span>·</span><span>Streamlit</span><span>·</span><span>Docker</span><span>·</span><span>SQL</span><span>·</span>
+        <span>Python</span><span>·</span><span>PyTorch</span><span>·</span><span>TensorFlow</span><span>·</span><span>Hugging Face</span><span>·</span><span>LangChain</span><span>·</span><span>FAISS</span><span>·</span><span>OpenCV</span><span>·</span><span>YOLOv8</span><span>·</span><span>SHAP</span><span>·</span><span>Power BI</span><span>·</span><span>FastAPI</span><span>·</span><span>Streamlit</span><span>·</span><span>Docker</span><span>·</span><span>SQL</span><span>·</span>
+      </div>
     </div>
-    </section>
+  </div>
+</section>
 
-    <script>
-    // Optionally: smooth accordion animation
-    document.querySelectorAll('#experience .card').forEach(card => {
-        card.addEventListener('click', () => {
-        const details = card.querySelector('.details');
-        details.classList.toggle('hidden');
-        });
-    });
-    </script>
-    
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-800 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-600/5 blur-3xl"></div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold mb-4">✨ Offered Services ✨</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-400">Practical AI solutions designed to help your business grow smarter</p>
-            </div>
-
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Service 1 -->
-                <div class="bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-blue-500/40 relative group transform transition duration-500 hover:-translate-y-3 cursor-pointer">
-                    <div class="text-5xl mb-4 group-hover:scale-125 transform transition">🤖</div>
-                    <h3 class="text-xl font-semibold mb-4 text-blue-400 group-hover:text-blue-300 transition">AI Model Development</h3>
-                    <p class="text-gray-300 mb-4">I build custom machine learning models that solve real business challenges, faster, smarter, and at scale.</p>
-                    <ul class="text-gray-400 text-sm space-y-1">
-                        <li class="hover:text-white transition">• Deep Learning & Neural Networks</li>
-                        <li class="hover:text-white transition">• Computer Vision Applications</li>
-                        <li class="hover:text-white transition">• Predictive Data Analytics</li>
-                    </ul>
-                    <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500 transition"></div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/40 relative group transform transition duration-500 hover:-translate-y-3 cursor-pointer">
-                    <div class="text-5xl mb-4 group-hover:scale-125 transform transition">💬</div>
-                    <h3 class="text-xl font-semibold mb-4 text-purple-400 group-hover:text-purple-300 transition">NLP Solutions</h3>
-                    <p class="text-gray-300 mb-4">I design natural language processing systems that automate communication, analyze text, and enhance customer experience.</p>
-                    <ul class="text-gray-400 text-sm space-y-1">
-                        <li class="hover:text-white transition">• Chatbots & Virtual Assistants</li>
-                        <li class="hover:text-white transition">• Sentiment & Text Analysis</li>
-                        <li class="hover:text-white transition">• Machine Translation & Text Generation</li>
-                    </ul>
-                    <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-500 transition"></div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-green-500/40 relative group transform transition duration-500 hover:-translate-y-3 cursor-pointer">
-                    <div class="text-5xl mb-4 group-hover:scale-125 transform transition">☁️</div>
-                    <h3 class="text-xl font-semibold mb-4 text-green-400 group-hover:text-green-300 transition">AI Consulting</h3>
-                    <p class="text-gray-300 mb-4">I provide expert guidance to help businesses adopt AI effectively, from strategy to deployment and training.</p>
-                    <ul class="text-gray-400 text-sm space-y-1">
-                        <li class="hover:text-white transition">• AI Strategy & Roadmap</li>
-                        <li class="hover:text-white transition">• Technology & Tool Selection</li>
-                        <li class="hover:text-white transition">• Team Training & Workshops</li>
-                    </ul>
-                    <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-green-500 transition"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-900 relative overflow-hidden">
-        <!-- Subtle glowing background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-600/10 to-transparent blur-3xl"></div>
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold mb-4">🚀 Featured Projects</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-400">Some of my best work, blending AI and creativity</p>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Project 1 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🖼️</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-blue-400 transition">CaptionGo.AI – Image Captioning</h3>
-                        <p class="text-gray-300 mb-4">Web app with ResNet152V2 + Transformer decoder for image captioning, deployed on Hugging Face Spaces.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Transformers</span>
-                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">ResNet152V2</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Gradio</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://huggingface.co/spaces/mohamed7oda/image-captioning" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition">
-                                🚀 Try it here
-                            </a>
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_nlp-activity-7335303849634582528-qDv-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank" 
-                            class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="https://github.com/mohamed-7oda/Image_Captioning_NLP_Project" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🚶</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-purple-400 transition">Person Tracking & Route Visualization – YOLOv8</h3>
-                        <p class="text-gray-300 mb-4">Built a system using YOLOv8 and OpenCV to detect, track, and overlay walking routes with colored paths in real-time videos.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">YOLOv8</span>
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">OpenCV</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">NumPy</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3">
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_computervision-yolo-activity-7334235207719436288-cNxN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank" 
-                            class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="https://github.com/mohamed-7oda/Tracking-Persons-Computer-Vision-Project" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                 
-                
-                <!-- Project 3 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-green-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🚁</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/30 to-blue-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-green-400 transition">Drone Detection Using Deep Learning</h3>
-                        <p class="text-gray-300 mb-4">Model for drone detection/localization with fine-tuned InceptionV3.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">InceptionV3</span>
-                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">CNN</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Computer Vision</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_deeplearning-activity-7289302590645850112-TwXf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank" 
-                            class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="http://github.com/mohamed-7oda/Drone-Detection-Project" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-red-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">📚</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/30 to-orange-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-red-400 transition">Research Paper Summarizer & Chatbot Using RAG</h3>
-                        <p class="text-gray-300 mb-4">
-                            Developed an AI platform that summarizes, translates, and chats with research papers using RAG, Cohere LLM, FastAPI, and Streamlit, enabling multilingual translation, text-to-speech, and intelligent Q&A.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">FastAPI</span>
-                            <span class="px-2 py-1 bg-orange-600/20 text-orange-300 rounded text-xs">Streamlit</span>
-                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">LangChain</span>
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Cohere LLM</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">RAG</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_ever-felt-like-reading-research-papers-is-activity-7366155457188478976-8bu8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank"
-                            class="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg font-medium hover:from-red-600 hover:to-orange-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="https://github.com/mohamed-7oda/Research-Paper-Summarizer" target="_blank"
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Project 5 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">📈</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-teal-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-blue-400 transition">Comparative Analysis of ML Models for Activity Recognition</h3>
-                        <p class="text-gray-300 mb-4">
-                            Conducted a large-scale study on human activity recognition using the MHEALTH dataset, comparing KNN, SVM, Logistic Regression, and ANN models built with TensorFlow for accuracy, precision, and F1-score evaluation.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">TensorFlow</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Keras</span>
-                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">Scikit-learn</span>
-                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">Matplotlib</span>
-                            <span class="px-2 py-1 bg-pink-600/20 text-pink-300 rounded text-xs">Seaborn</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://github.com/mohamed-7oda/Comparative-Analysis-of-Machine-Learning-Models-for-Activity-Recognition" target="_blank"
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Project 6 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-red-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-yellow-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🤖</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/30 to-yellow-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-red-400 transition">EMAM – AI Chatbot</h3>
-                        <p class="text-gray-300 mb-4">Built a custom chatbot using Cohere API + LangChain with chat history, FastAPI backend, and Streamlit frontend.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">LangChain</span>
-                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">FastAPI</span>
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">Streamlit</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">Cohere API</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://chatbot-deployment-mq4ev9su5isyhekcdenjws.streamlit.app/" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition">
-                                🚀 Try it here
-                            </a>
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_try-out-my-chatbot-from-here-https-activity-7364622071122845698-N37U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank" 
-                            class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="https://github.com/mohamed-7oda/ChatBot" target="_blank" 
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <!-- Project 7 -->
-                <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-3 transition duration-500 cursor-pointer relative">
-                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-5xl">🧠</span>
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-600/30 opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 group-hover:text-purple-400 transition">
-                            CV Retrieval & Matching System (RAG)
-                        </h3>
-                        <p class="text-gray-300 mb-4">
-                            Built an AI system that matches job descriptions with candidate CVs using RAG.  
-                            Ranks applicants by relevance and provides AI-generated recruiter evaluations.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-purple-600/20 text-purple-300 rounded text-xs">RAG</span>
-                            <span class="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">LangChain</span>
-                            <span class="px-2 py-1 bg-pink-600/20 text-pink-300 rounded text-xs">Cohere LLM</span>
-                            <span class="px-2 py-1 bg-green-600/20 text-green-300 rounded text-xs">ChromaDB</span>
-                            <span class="px-2 py-1 bg-yellow-600/20 text-yellow-300 rounded text-xs">FastAPI</span>
-                            <span class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-xs">Streamlit</span>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="flex gap-3 flex-wrap">
-                            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam-03ba16263_are-you-hiring-and-have-many-cvs-but-don-activity-7362804075257565184-yZU0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDBoa8BWHEbbbHY_1BLY7333dNxVgP_LrE" target="_blank"
-                            class="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg font-medium hover:from-red-600 hover:to-orange-700 transition">
-                                🎬 Demo Video
-                            </a>
-                            <a href="https://github.com/mohamed-7oda/CV-match-chatbot-using-RAG"
-                            target="_blank"
-                            class="inline-block px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">
-                                📂 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-gray-800 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-bold mb-4">Achievements</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-            
-        <!-- Achievement Card -->
-        <a href="https://drive.google.com/file/d/1QlImTspO4q4Y7HjBpG0-phfJxYzM0jJ1/view?usp=sharing" target="_blank" class="group block">
-            <div class="bg-gray-900 rounded-xl p-8 transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative">
-                <!-- Small Photo Instead of Icon -->
-                <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-2 border-yellow-400 group-hover:animate-bounce">
-                    <img src="stanford-logo.png" alt="Stanford Certificate" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Stanford Machine Learning Certificate</h3>
-                <p class="text-gray-400 text-sm">🎓 Stanford University ML Certificate</p>
-            </div>
-        </a>
-
-
-        <!-- Achievement Card -->
-        <a href="https://drive.google.com/file/d/1mvj6Mx1SFRqiW0zC5cQkjkow3Xt8KU8b/view?usp=sharing" target="_blank" class="group block">
-            <div class="bg-gray-900 rounded-xl p-8 transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative">
-                <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden group-hover:animate-bounce">
-                    <!-- Nvidia logo fills the circle -->
-                    <img src="nvidia-logo.png" alt="Nvidia Logo" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Nvidia Deep Learning Certificate</h3>
-                <p class="text-gray-400 text-sm">🚀 Completed Nvidia Deep Learning Program</p>
-            </div>
-        </a>
-
-
-        <!-- Achievement Card -->
-        <a href="https://drive.google.com/file/d/1E80xFj6g8Nnx-neKBAirZ-GGJir9PJxj/view?usp=sharing" target="_blank" class="group block">
-            <div class="bg-gray-900 rounded-xl p-8 transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative">
-                <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center group-hover:animate-bounce overflow-hidden">
-                    <!-- Huawei logo fills the circle -->
-                    <img src="huawei-logo.jpg" alt="Huawei Logo" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Huawei AI Certificate</h3>
-                <p class="text-gray-400 text-sm">📜 Earned Huawei AI Certificate</p>
-            </div>
-        </a>
-
-        <!-- Achievement Card -->
-        <a href="https://drive.google.com/file/d/1T7BCq06dkxoNm583RU95LeCk8bsL9_bR/view?usp=sharing" target="_blank" class="group block">
-            <div class="bg-gray-900 rounded-xl p-8 transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative">
-                <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center group-hover:animate-bounce overflow-hidden">
-                    <!-- Replace with Mackinsey logo or related image -->
-                    <img src="mackinsey-logo.jpg" alt="Mackinsey Logo" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Mackinsey Soft Skills Certificate</h3>
-                <p class="text-gray-400 text-sm">📜 Earned Mackinsey Soft Skills Certificate</p>
-            </div>
-        </a>
-
-        <!-- Achievement Card -->
-        <a href="https://drive.google.com/file/d/1rLmygS6G0vG_jBaDF4Un60jH8jdPa3Bb/view?usp=sharing" target="_blank" class="group block">
-            <div class="bg-gray-900 rounded-xl p-8 transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative">
-                <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center group-hover:animate-bounce overflow-hidden">
-                    <!-- Replace with CIB logo or related image -->
-                    <img src="cib-logo.png" alt="CIB Logo" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-lg font-semibold mb-2">CIB Certificate</h3>
-                <p class="text-gray-400 text-sm">📜 Earned CIB Training Certificate</p>
-            </div>
-        </a>
-
-        <!-- Achievement Card -->
-        <a href="https://drive.google.com/file/d/1yAxSF2dnLW9hGuK3rR7RSiZyuAbPYKif/view?usp=sharing" target="_blank" class="group block">
-            <div class="bg-gray-900 rounded-xl p-8 transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative">
-                <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center group-hover:animate-bounce overflow-hidden">
-                    <!-- Replace with AiCE ALX logo or related image -->
-                    <img src="aice-logo.jpeg" alt="AiCE ALX Logo" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-lg font-semibold mb-2">AiCE ALX Certificate</h3>
-                <p class="text-gray-400 text-sm">📜 Earned AiCE ALX Certificate</p>
-            </div>
-        </a>
-
-        </div>
+<!-- ───────── ABOUT ───────── -->
+<section id="about" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 reveal">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-neon mb-2">01 — About</div>
+        <h2 class="text-3xl sm:text-4xl font-bold">Who I am</h2>
+      </div>
+      <div class="text-sm text-gray-500 font-mono">// background</div>
     </div>
-    </section>
 
-    <script>
-    // Counter Animation
-    document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".count");
-    counters.forEach(counter => {
-        counter.innerText = "0";
-        const updateCounter = () => {
-        const target = +counter.getAttribute("data-target") || parseFloat(counter.innerText);
-        const current = +counter.innerText;
-        const increment = target / 100;
-        if (current < target) {
-            counter.innerText = (current + increment).toFixed(1);
-            setTimeout(updateCounter, 30);
-        } else {
-            counter.innerText = target;
-        }
-        };
-        updateCounter();
-    });
-    });
-    </script>
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5">
+        <div class="relative aspect-square rounded-2xl overflow-hidden card glow-violet">
+          <img src="myphoto3.jpg" alt="Mohamed Mahmoud Emam"
+               class="w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="w-full h-full bg-gradient-to-br from-neon/30 to-violet/30 hidden items-center justify-center">
+            <svg class="w-32 h-32 text-white/80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+          </div>
+          <!-- Corner badge -->
+          <div class="absolute bottom-4 left-4 right-4 backdrop-blur-md bg-ink/60 border border-line rounded-xl px-4 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon to-violet grid place-items-center text-ink font-bold">Z</div>
+            <div>
+              <div class="text-sm font-semibold">Zewail City</div>
+              <div class="text-xs text-gray-400">Data Science & AI · GPA 3.2 · Grad. Jun 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Title -->
-        <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-bold mb-4">Let's Work Together</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
-        <p class="text-gray-300 text-lg">
-            Ready to transform your ideas into intelligent solutions? Let’s discuss your project!
+      <div class="lg:col-span-7 space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          I'm a final-year Computer Science student at <span class="text-white">Zewail City of Science and Technology</span>, majoring in Data Science & AI. My focus is on building production-grade ML systems — not notebook demos. From <span class="text-neon">Transformer-based image captioning</span> deployed on Hugging Face Spaces to <span class="text-neon">RAG-powered research assistants</span>, I care about systems that survive contact with real users.
         </p>
-        </div>
-
-        <!-- Grid -->
-        <div class="grid md:grid-cols-2 gap-12 text-center">
-
-        <!-- Email -->
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohamedmahmoudemam23@gmail.com"
-            class="group flex flex-col items-center bg-gray-800 p-12 rounded-2xl 
-                    hover:bg-gray-700 hover:scale-105 transition-all duration-300 
-                    shadow-lg hover:shadow-blue-500/30 w-full">
-            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6 
-                        group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-2 .9-2 
-                2v12c0 1.1.9 2 2 2h16c1.1 0 
-                2-.9 2-2-2V6c0-1.1-.9-2-2-2zm0 
-                4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-            </div>
-            <p class="text-gray-300 font-medium text-xl break-words">mohamedmahmoudemam23@gmail.com</p>
-            <p class="text-gray-500 text-base">Email me directly</p>
-        </a>
-
-        <!-- Phone -->
-        <a href="tel:+201018656519"
-            class="group flex flex-col items-center bg-gray-800 p-12 rounded-2xl 
-                    hover:bg-gray-700 hover:scale-105 transition-all duration-300 
-                    shadow-lg hover:shadow-purple-500/30 w-full">
-            <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mb-6 
-                        group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 
-                1.02-.24 1.12.37 2.33.57 3.57.57.55 
-                0 1 .45 1 1V20c0 .55-.45 1-1 
-                1-9.39 0-17-7.61-17-17 
-                0-.55.45-1 1-1h3.5c.55 0 1 
-                .45 1 1 0 1.25.2 2.45.57 
-                3.57.11.35.03.74-.25 
-                1.02l-2.2 2.2z"/>
-            </svg>
-            </div>
-            <p class="text-gray-300 font-medium text-xl">01018656519</p>
-            <p class="text-gray-500 text-base">Call for urgent projects</p>
-        </a>
-
-        <!-- Location -->
-        <a href="https://www.google.com/maps/place/6th+of+October,+Giza,+Egypt/" target="_blank"
-            class="group flex flex-col items-center bg-gray-800 p-12 rounded-2xl 
-                    hover:bg-gray-700 hover:scale-105 transition-all duration-300 
-                    shadow-lg hover:shadow-green-500/30 w-full md:col-span-2">
-            <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6 
-                        group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 
-                5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
-                9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
-                2.5-2.5 2.5 1.12 2.5 2.5-1.12 
-                2.5-2.5 2.5z"/>
-            </svg>
-            </div>
-            <p class="text-gray-300 font-medium text-xl">Egypt, Giza, 6-October</p>
-            <p class="text-gray-500 text-base">Available for remote work</p>
-        </a>
-
-        </div>
-    </div>
-    </section>
-
-
-    <!-- Thank You Section -->
-    <section id="thank-you" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800 text-center">
-    <div class="max-w-4xl mx-auto px-6 fade-in">
-        
-        <!-- Emoji + Heading -->
-        <div class="text-6xl mb-6 animate-bounce">🚀</div>
-        <h2 class="text-4xl font-extrabold text-white mb-4">Thank You!</h2>
-        <p class="text-lg text-gray-300 mb-12">
-        I truly appreciate you exploring my portfolio.  
-        Let’s connect and bring your AI ideas to life!
+        <p>
+          I've interned at the <span class="text-white">Egyptian Ministry of Communications (MCIT)</span> building Power BI analytics for ministry stakeholders, and at the <span class="text-white">National Telecommunication Institute (NTI)</span> shipping RAG pipelines and LoRA fine-tuning workflows. I'm also a co-author on a research paper applying explainable ML (SHAP, LIME, PDP, ICE) to breast cancer diagnosis.
+        </p>
+        <p>
+          I'm currently open to <span class="text-white">AI / Machine Learning Engineer</span> roles — remote, hybrid, or on-site. If you're building something that needs to actually work in production, let's talk.
         </p>
 
-        <!-- Social Links -->
-        <div class="flex justify-center space-x-10">
-        
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/mohamed-mahmoud-emam-03ba16263/" target="_blank" 
-            class="group transform transition duration-300 hover:scale-110">
-            <div class="flex flex-col items-center">
-            <div class="p-4 bg-blue-600/20 rounded-full group-hover:bg-blue-600/40 transition-all">
-                <svg class="w-10 h-10 text-blue-400 group-hover:text-blue-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
-                        2.239 5 5 5h14c2.762 0 5-2.239 
-                        5-5v-14c0-2.761-2.238-5-5-5zm-11 
-                        19h-3v-11h3v11zm-1.5-12.268c-.966 
-                        0-1.75-.79-1.75-1.764s.784-1.764 
-                        1.75-1.764 1.75.79 
-                        1.75 1.764-.783 1.764-1.75 
-                        1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 
-                        0v5.604h-3v-11h3v1.765c1.396-2.586 
-                        7-2.777 7 2.476v6.759z"/>
-                </svg>
-            </div>
-            <span class="mt-2 text-sm text-gray-200 group-hover:text-white">LinkedIn</span>
-            </div>
-        </a>
-
-        <!-- GitHub -->
-        <a href="https://github.com/mohamed-7oda" target="_blank" 
-            class="group transform transition duration-300 hover:scale-110">
-            <div class="flex flex-col items-center">
-            <div class="p-4 bg-blue-600/20 rounded-full group-hover:bg-blue-600/40 transition-all">
-                <svg class="w-10 h-10 text-gray-300 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 
-                        12 0 5.302 3.438 9.8 8.207 
-                        11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 
-                        1.205.084 1.839 1.237 1.839 
-                        1.237 1.07 1.834 2.807 1.304 
-                        3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 
-                        0-1.311.469-2.381 
-                        1.236-3.221-.124-.303-.535-1.524.117-3.176 
-                        0 0 1.008-.322 3.301 
-                        1.23.957-.266 1.983-.399 
-                        3.003-.404 1.02.005 2.047.138 
-                        3.006.404 2.291-1.552 3.297-1.23 
-                        3.297-1.23.653 1.653.242 
-                        2.874.118 3.176.77.84 1.235 
-                        1.911 1.235 3.221 0 4.609-2.807 
-                        5.624-5.479 5.921.43.372.823 
-                        1.102.823 2.222v3.293c0 
-                        .319.192.694.801.576 
-                        4.765-1.589 8.199-6.086 
-                        8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </div>
-            <span class="mt-2 text-sm text-gray-200 group-hover:text-white">GitHub</span>
-            </div>
-        </a>
-
-        <!-- Email -->
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohamedmahmoudemam23@gmail.com" 
-            class="group transform transition duration-300 hover:scale-110">
-            <div class="flex flex-col items-center">
-            <div class="p-4 bg-blue-600/20 rounded-full group-hover:bg-blue-600/40 transition-all">
-                <svg class="w-10 h-10 text-red-400 group-hover:text-red-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 
-                        2L2 18c0 1.1.9 2 
-                        2 2h16c1.1 0 2-.9 
-                        2-2V6c0-1.1-.9-2-2-2zm0 
-                        4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </div>
-            <span class="mt-2 text-sm text-gray-200 group-hover:text-white">Email</span>
-            </div>
-        </a>
-
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+          <div class="card rounded-xl p-4">
+            <div class="text-xs text-gray-500 uppercase tracking-wider">Location</div>
+            <div class="text-sm font-semibold mt-1">Cairo, Egypt</div>
+          </div>
+          <div class="card rounded-xl p-4">
+            <div class="text-xs text-gray-500 uppercase tracking-wider">Graduating</div>
+            <div class="text-sm font-semibold mt-1">June 2026</div>
+          </div>
+          <div class="card rounded-xl p-4">
+            <div class="text-xs text-gray-500 uppercase tracking-wider">Languages</div>
+            <div class="text-sm font-semibold mt-1">Arabic · English</div>
+          </div>
+          <div class="card rounded-xl p-4">
+            <div class="text-xs text-gray-500 uppercase tracking-wider">Status</div>
+            <div class="text-sm font-semibold mt-1 text-lime">Open to work</div>
+          </div>
         </div>
+      </div>
     </div>
-    </section>
+  </div>
+</section>
 
+<!-- ───────── SKILLS ───────── -->
+<section id="skills" class="py-24 bg-panel/20 border-y border-line relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 reveal">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-neon mb-2">02 — Skills</div>
+        <h2 class="text-3xl sm:text-4xl font-bold">What I work with</h2>
+      </div>
+      <div class="text-sm text-gray-500 font-mono">// stack</div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800 py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">© 2024 Mohamed Mahmoud Emam. All rights reserved. Built with passion for AI innovation.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Card -->
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-neon/10 border border-neon/30 grid place-items-center">
+            <svg class="w-5 h-5 text-neon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3 class="font-semibold">Machine Learning & DL</h3>
         </div>
-    </footer>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-cyan">PyTorch</span>
+          <span class="pill pill-cyan">TensorFlow / Keras</span>
+          <span class="pill pill-cyan">Scikit-learn</span>
+          <span class="pill pill-cyan">XGBoost</span>
+          <span class="pill pill-cyan">Transfer Learning</span>
+          <span class="pill pill-cyan">Hyperparameter Tuning</span>
+          <span class="pill pill-cyan">MLOps fundamentals</span>
+        </div>
+      </div>
 
-    <script>
-        // Smooth scrolling for navigation
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-violet/10 border border-violet/30 grid place-items-center">
+            <svg class="w-5 h-5 text-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="font-semibold">NLP & LLMs</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-violet">RAG Pipelines</span>
+          <span class="pill pill-violet">LangChain</span>
+          <span class="pill pill-violet">LoRA Fine-tuning</span>
+          <span class="pill pill-violet">Prompt Engineering</span>
+          <span class="pill pill-violet">Embeddings</span>
+          <span class="pill pill-violet">FAISS</span>
+          <span class="pill pill-violet">Hugging Face</span>
+          <span class="pill pill-violet">Cohere API</span>
+        </div>
+      </div>
 
-        // Add click handlers to nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-pink/10 border border-pink/30 grid place-items-center">
+            <svg class="w-5 h-5 text-pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="font-semibold">Computer Vision</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-pink">YOLOv8</span>
+          <span class="pill pill-pink">Object Detection</span>
+          <span class="pill pill-pink">Image Captioning</span>
+          <span class="pill pill-pink">Bounding Box Regression</span>
+          <span class="pill pill-pink">OpenCV</span>
+          <span class="pill pill-pink">ResNet / Inception / VGG</span>
+        </div>
+      </div>
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            // Simple mobile menu implementation
-            alert('Mobile menu would open here in a full implementation');
-        });
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-amber/10 border border-amber/30 grid place-items-center">
+            <svg class="w-5 h-5 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="font-semibold">Data & Analytics</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-amber">Power BI (DAX)</span>
+          <span class="pill pill-amber">SQL</span>
+          <span class="pill pill-amber">Pandas</span>
+          <span class="pill pill-amber">NumPy</span>
+          <span class="pill pill-amber">ETL Workflows</span>
+          <span class="pill pill-amber">Matplotlib / Seaborn</span>
+        </div>
+      </div>
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-lime/10 border border-lime/30 grid place-items-center">
+            <svg class="w-5 h-5 text-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="font-semibold">Explainable AI</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-lime">SHAP</span>
+          <span class="pill pill-lime">LIME</span>
+          <span class="pill pill-lime">PDP</span>
+          <span class="pill pill-lime">ICE</span>
+          <span class="pill pill-lime">Feature Attribution</span>
+        </div>
+      </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-neon/10 border border-neon/30 grid place-items-center">
+            <svg class="w-5 h-5 text-neon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="font-semibold">Tools & Platforms</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill">Git / GitHub</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">Streamlit</span>
+          <span class="pill">Gradio</span>
+          <span class="pill">Docker</span>
+          <span class="pill">HF Spaces</span>
+          <span class="pill">Linux</span>
+          <span class="pill">Jupyter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+<!-- ───────── EXPERIENCE ───────── -->
+<section id="experience" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 reveal">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-neon mb-2">03 — Experience</div>
+        <h2 class="text-3xl sm:text-4xl font-bold">Where I've worked</h2>
+      </div>
+      <div class="text-sm text-gray-500 font-mono">// timeline</div>
+    </div>
 
-        // Animate skill bars when they come into view
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-bar');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width + '%';
-                        }, 200);
-                    });
-                }
-            });
-        }, observerOptions);
+    <div class="relative">
+      <!-- spine -->
+      <div class="absolute left-3 sm:left-4 top-2 bottom-2 w-px bg-gradient-to-b from-neon via-violet to-pink opacity-60"></div>
 
-        // Observe skills section
-        const skillsSection = document.getElementById('skills');
-        if (skillsSection) {
-            skillObserver.observe(skillsSection);
-        }
+      <div class="space-y-6">
+        <!-- NTI -->
+        <div class="relative pl-10 sm:pl-12">
+          <span class="absolute left-0 top-5 w-7 h-7 rounded-full bg-ink border-2 border-neon grid place-items-center">
+            <span class="w-2 h-2 rounded-full bg-neon"></span>
+          </span>
+          <div class="card rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-lg font-semibold text-white">NLP Intern</h3>
+                <p class="text-sm text-gray-400">National Telecommunication Institute (NTI) · Egypt</p>
+              </div>
+              <span class="pill pill-cyan">Aug — Sep 2025</span>
+            </div>
+            <ul class="text-sm text-gray-300 space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-neon mt-1">▸</span><span>Built end-to-end RAG pipelines integrating LangChain workflows with Cohere and Hugging Face APIs, improving chatbot response relevance by ~35% on internal evaluation.</span></li>
+              <li class="flex gap-2"><span class="text-neon mt-1">▸</span><span>Fine-tuned LLMs with LoRA on domain-specific datasets, reducing trainable parameters by 90%+ while preserving baseline accuracy.</span></li>
+              <li class="flex gap-2"><span class="text-neon mt-1">▸</span><span>Engineered text preprocessing (regex, normalization, tokenization) and grounded models with external knowledge to reduce hallucinations.</span></li>
+            </ul>
+            <a href="https://drive.google.com/file/d/1UtoBZbodUKN1MPpj5bQ2_vvnTTAMiItx/view" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 mt-4 text-xs text-neon hover:underline">
+              View Certificate
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
 
-        // Form submission handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const name = formData.get('name') || event.target.querySelector('input[type="text"]').value;
-            const email = formData.get('email') || event.target.querySelector('input[type="email"]').value;
-            
-            // Show success message
-            alert(`Thank you ${name}! Your message has been received. I'll get back to you at ${email} within 24 hours.`);
-            
-            // Reset form
-            event.target.reset();
-        }
+        <!-- MCIT -->
+        <div class="relative pl-10 sm:pl-12">
+          <span class="absolute left-0 top-5 w-7 h-7 rounded-full bg-ink border-2 border-violet grid place-items-center">
+            <span class="w-2 h-2 rounded-full bg-violet"></span>
+          </span>
+          <div class="card rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-lg font-semibold text-white">Data Analysis Intern</h3>
+                <p class="text-sm text-gray-400">Ministry of Communications and Information Technology (MCIT) · Egypt</p>
+              </div>
+              <span class="pill pill-violet">Aug — Sep 2025</span>
+            </div>
+            <ul class="text-sm text-gray-300 space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-violet mt-1">▸</span><span>Built 5+ interactive Power BI dashboards for ministry stakeholders, transforming raw data from multiple sources into decision-ready reports.</span></li>
+              <li class="flex gap-2"><span class="text-violet mt-1">▸</span><span>Optimized slow-loading reports by restructuring data models and DAX measures — cutting refresh times by ~40%.</span></li>
+              <li class="flex gap-2"><span class="text-violet mt-1">▸</span><span>Engineered ETL workflows handling missing values, duplicates, and type inconsistencies across datasets of 100K+ rows.</span></li>
+            </ul>
+            <a href="https://drive.google.com/file/d/1LlIw7JIQGmk-8C52ecOwKgGmi_fh0DwP/view" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 mt-4 text-xs text-violet hover:underline">
+              View Certificate
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
 
-        // Typing animation for the cover section
-        const typingText = document.getElementById('typing-text');
-        if (typingText) {
-            const text = 'Data Scientist & AI Engineer';
-            let index = 0;
-            
-            function typeText() {
-                if (index < text.length) {
-                    typingText.textContent = text.slice(0, index + 1);
-                    index++;
-                    setTimeout(typeText, 100);
-                }
-            }
-            
-            // Start typing animation after a short delay
-            setTimeout(typeText, 1000);
-        }
+        <!-- TA Python -->
+        <div class="relative pl-10 sm:pl-12">
+          <span class="absolute left-0 top-5 w-7 h-7 rounded-full bg-ink border-2 border-pink grid place-items-center">
+            <span class="w-2 h-2 rounded-full bg-pink"></span>
+          </span>
+          <div class="card rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-lg font-semibold text-white">Junior Teaching Assistant — Python</h3>
+                <p class="text-sm text-gray-400">Zewail City of Science and Technology</p>
+              </div>
+              <span class="pill pill-pink">Feb — May 2025</span>
+            </div>
+            <ul class="text-sm text-gray-300 space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-pink mt-1">▸</span><span>Taught core Python concepts (OOP, control flow, error handling) to 50+ first-year CS students through labs and 1:1 debugging.</span></li>
+              <li class="flex gap-2"><span class="text-pink mt-1">▸</span><span>Reviewed and graded coding assignments; produced supplemental practice problems.</span></li>
+            </ul>
+          </div>
+        </div>
 
-        // Add active nav link highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
+        <!-- TA ML -->
+        <div class="relative pl-10 sm:pl-12">
+          <span class="absolute left-0 top-5 w-7 h-7 rounded-full bg-ink border-2 border-amber grid place-items-center">
+            <span class="w-2 h-2 rounded-full bg-amber"></span>
+          </span>
+          <div class="card rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-lg font-semibold text-white">Junior Teaching Assistant — Machine Learning</h3>
+                <p class="text-sm text-gray-400">Zewail City of Science and Technology</p>
+              </div>
+              <span class="pill pill-amber">Jul — Sep 2024</span>
+            </div>
+            <ul class="text-sm text-gray-300 space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-amber mt-1">▸</span><span>Supported 60+ undergraduates through ML lab sessions covering classification, regression, and model evaluation using NumPy, pandas, and scikit-learn.</span></li>
+              <li class="flex gap-2"><span class="text-amber mt-1">▸</span><span>Guided students through preprocessing, model training, and debugging; assisted with grading and tutorials.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-400');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-blue-400');
-                }
-            });
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974d940f313fe177',t:'MTc1NjE1MTAwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<!-- ───────── PROJECTS ───────── -->
+<section id="projects" class="py-24 bg-panel/20 border-y border-line relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 reveal">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-neon mb-2">04 — Projects</div>
+        <h2 class="text-3xl sm:text-4xl font-bold">Selected work</h2>
+      </div>
+      <div class="text-sm text-gray-500 font-mono">// builds</div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1. RAG Paper Chatbot -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-red-500/30 via-amber/30 to-pink/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-amber">Featured</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">Research Paper Summarizer & RAG Chatbot</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Full-stack AI platform that ingests PDFs and delivers summaries, multilingual translation, TTS, and conversational Q&A — under 3s response latency on FAISS retrieval.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-cyan">FastAPI</span>
+            <span class="pill pill-violet">LangChain</span>
+            <span class="pill pill-pink">Cohere</span>
+            <span class="pill pill-lime">FAISS</span>
+            <span class="pill">Streamlit</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam_ever-felt-like-reading-research-papers-is-activity-7366155457188478976-mKOA/" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Demo</a>
+            <a href="https://github.com/mohamed-7oda/Research-Paper-Summarizer" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. CaptionGo -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-neon/30 via-violet/30 to-pink/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-cyan">BLEU-4: 0.31</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">CaptionGo — Image Captioning</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Transformer-decoder captioning deployed on Hugging Face Spaces. ResNet152V2 features + custom 6-layer decoder, trained on MS-COCO (123K+ pairs).
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-cyan">TensorFlow</span>
+            <span class="pill pill-violet">Transformers</span>
+            <span class="pill pill-pink">Gradio</span>
+            <span class="pill">HF Spaces</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://huggingface.co/spaces/mohamed7oda/image-captioning" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Try Live</a>
+            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam_nlp-activity-7335303849634582528-oU-R/" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Demo</a>
+            <a href="https://github.com/mohamed-7oda/Image_Captioning_NLP_Project" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Drone Detection -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-lime/30 via-neon/30 to-violet/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 6-6"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-lime">84.1% val acc</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">Drone Detection & Localization</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            UAV detection via bounding-box regression. Fine-tuned InceptionV3 outperformed VGG16/ResNet50 baselines across multiple Kaggle datasets.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-cyan">PyTorch</span>
+            <span class="pill pill-pink">OpenCV</span>
+            <span class="pill pill-violet">Transfer Learning</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam_deeplearning-activity-7289302590645850112-iE0g/" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Demo</a>
+            <a href="http://github.com/mohamed-7oda/Drone-Detection-Project" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Breast Cancer XAI -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-pink/30 via-violet/30 to-neon/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-pink">Research Paper</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">Explainable ML for Breast Cancer</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Co-authored research paper. Compared 5 classifiers (97% F1 with XGBoost) and applied SHAP, LIME, PDP, ICE to surface predictive features for clinical deployment.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-cyan">Scikit-learn</span>
+            <span class="pill pill-violet">XGBoost</span>
+            <span class="pill pill-lime">SHAP / LIME</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://drive.google.com/file/d/1RQ5MXXT4ehI4a-HvosumwZp0eTfB8-fH/view" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">View Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Nature-Inspired -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-violet/30 via-pink/30 to-amber/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-violet">+12% baseline</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">Nature-Inspired CNN Tuning + XAI</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            COVID X-ray CNN with metaheuristic hyperparameter tuning (PSO, GA, Simulated Annealing). Integrated SHAP for interpretable heatmap explanations.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-cyan">TensorFlow</span>
+            <span class="pill pill-violet">PSO / GA</span>
+            <span class="pill pill-lime">SHAP</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://github.com/mohamed-7oda/Nature-Inspired-Optimization-for-CNN-Hyperparameter-Tuning-with-XAI" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Person Tracking -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-pink/30 via-amber/30 to-neon/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-pink">30 FPS</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">Person Tracking & Route Viz</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Real-time multi-person tracking with YOLOv8 + OpenCV. Overlays color-coded movement paths across intersecting trajectories.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-pink">YOLOv8</span>
+            <span class="pill pill-cyan">OpenCV</span>
+            <span class="pill pill-lime">NumPy</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam_computervision-yolo-activity-7334235207719436288-7HTy/" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Demo</a>
+            <a href="https://github.com/mohamed-7oda/Tracking-Persons-Computer-Vision-Project" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Activity Recognition -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-neon/30 via-lime/30 to-amber/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-lime">1M+ records</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">Activity Recognition (MHEALTH)</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Comparative study of 5 ML/DL models on 1M+ sensor records. ANN reached 96% F1-score across precision/recall metrics.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-cyan">TensorFlow</span>
+            <span class="pill pill-amber">Scikit-learn</span>
+            <span class="pill pill-violet">Seaborn</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://github.com/mohamed-7oda/Comparative-Analysis-of-Machine-Learning-Models-for-Activity-Recognition" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. EMAM Chatbot -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-amber/30 via-pink/30 to-violet/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-amber">Live</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">EMAM — AI Chatbot</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Custom chatbot with chat history, built on Cohere API + LangChain. FastAPI backend, Streamlit frontend, deployed live.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-violet">LangChain</span>
+            <span class="pill pill-cyan">FastAPI</span>
+            <span class="pill pill-pink">Cohere</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://chatbot-deployment-mq4ev9su5isyhekcdenjws.streamlit.app/" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Try Live</a>
+            <a href="https://github.com/mohamed-7oda/ChatBot" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. CV Retrieval -->
+      <article class="card rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative h-44 bg-gradient-to-br from-violet/30 via-pink/30 to-neon/30 overflow-hidden">
+          <div class="absolute inset-0 bg-grid opacity-50"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <svg class="w-14 h-14 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 pill pill-violet">RAG · ChromaDB</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="font-semibold text-lg mb-2">CV Retrieval & Matching System</h3>
+          <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+            Matches job descriptions with candidate CVs via RAG. Ranks applicants by relevance and produces AI-generated recruiter evaluations.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="pill pill-violet">LangChain</span>
+            <span class="pill pill-lime">ChromaDB</span>
+            <span class="pill pill-pink">Cohere</span>
+            <span class="pill pill-cyan">FastAPI</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <a href="https://www.linkedin.com/posts/mohamed-mahmoud-emam_are-you-hiring-and-have-many-cvs-but-don-activity-7362804075257565184-yZU0" target="_blank" rel="noopener" class="btn-primary text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">Demo</a>
+            <a href="https://github.com/mohamed-7oda/CV-match-chatbot-using-RAG" target="_blank" rel="noopener" class="btn-ghost text-xs px-3 py-2 rounded-lg inline-flex items-center gap-1.5">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────── ACHIEVEMENTS ───────── -->
+<section id="achievements" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 reveal">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-neon mb-2">05 — Achievements</div>
+        <h2 class="text-3xl sm:text-4xl font-bold">Certifications & programs</h2>
+      </div>
+      <div class="text-sm text-gray-500 font-mono">// credentials</div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="https://drive.google.com/file/d/1QlImTspO4q4Y7HjBpG0-phfJxYzM0jJ1/view?usp=sharing" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-neon/10 border border-neon/30 grid place-items-center shrink-0 font-bold text-neon">S</div>
+        <div>
+          <div class="font-semibold">Supervised Machine Learning</div>
+          <div class="text-xs text-gray-400 mt-1">Stanford Online · Andrew Ng</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1mvj6Mx1SFRqiW0zC5cQkjkow3Xt8KU8b/view?usp=sharing" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-lime/10 border border-lime/30 grid place-items-center shrink-0 font-bold text-lime">N</div>
+        <div>
+          <div class="font-semibold">Getting Started with Deep Learning</div>
+          <div class="text-xs text-gray-400 mt-1">NVIDIA Deep Learning Institute</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1E80xFj6g8Nnx-neKBAirZ-GGJir9PJxj/view?usp=sharing" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-pink/10 border border-pink/30 grid place-items-center shrink-0 font-bold text-pink">H</div>
+        <div>
+          <div class="font-semibold">HCIA-AI V3.5</div>
+          <div class="text-xs text-gray-400 mt-1">Huawei</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1T7BCq06dkxoNm583RU95LeCk8bsL9_bR/view?usp=sharing" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-violet/10 border border-violet/30 grid place-items-center shrink-0 font-bold text-violet">M</div>
+        <div>
+          <div class="font-semibold">McKinsey Forward Program</div>
+          <div class="text-xs text-gray-400 mt-1">McKinsey & Company</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1rLmygS6G0vG_jBaDF4Un60jH8jdPa3Bb/view?usp=sharing" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-amber/10 border border-amber/30 grid place-items-center shrink-0 font-bold text-amber">A</div>
+        <div>
+          <div class="font-semibold">AI Career Essentials</div>
+          <div class="text-xs text-gray-400 mt-1">ALX · 8-week program</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1rLmygS6G0vG_jBaDF4Un60jH8jdPa3Bb/view?usp=sharing" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-neon/10 border border-neon/30 grid place-items-center shrink-0 font-bold text-neon">C</div>
+        <div>
+          <div class="font-semibold">The Green Leap</div>
+          <div class="text-xs text-gray-400 mt-1">CIB Summer Internship Program</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── CONTACT ───────── -->
+<section id="contact" class="py-24 bg-panel/20 border-y border-line relative">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center reveal">
+    <div class="text-xs uppercase tracking-[0.2em] text-neon mb-2">06 — Contact</div>
+    <h2 class="text-3xl sm:text-5xl font-bold mb-4">Let's build <span class="grad-text">something</span></h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+      I'm open to AI/ML Engineer roles, research collaborations, and interesting freelance work. The fastest way to reach me is email.
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-5 mb-10">
+      <a href="mailto:mohamedmahmoudemam23@gmail.com" class="card rounded-2xl p-6 flex flex-col items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/30 grid place-items-center">
+          <svg class="w-6 h-6 text-neon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-gray-500">Email</div>
+        <div class="text-sm font-medium break-all">mohamedmahmoudemam23@gmail.com</div>
+      </a>
+
+      <a href="tel:+201018656519" class="card rounded-2xl p-6 flex flex-col items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-violet/10 border border-violet/30 grid place-items-center">
+          <svg class="w-6 h-6 text-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-gray-500">Phone</div>
+        <div class="text-sm font-medium">+20 101 865 6519</div>
+      </a>
+
+      <a href="https://www.google.com/maps/place/6th+of+October,+Giza,+Egypt/" target="_blank" rel="noopener" class="card rounded-2xl p-6 flex flex-col items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-pink/10 border border-pink/30 grid place-items-center">
+          <svg class="w-6 h-6 text-pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-gray-500">Location</div>
+        <div class="text-sm font-medium">6th of October, Giza, Egypt</div>
+      </a>
+    </div>
+
+    <div class="flex justify-center flex-wrap gap-3">
+      <a href="mailto:mohamedmahmoudemam23@gmail.com" class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-lg">
+        Send me an email
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/mohamed-mahmoud-emam/" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center gap-2 px-6 py-3 rounded-lg">Message on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FOOTER ───────── -->
+<footer class="py-10 border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+    <p>© <span id="year"></span> Mohamed Mahmoud Emam. Built with care.</p>
+    <div class="flex items-center gap-5">
+      <a href="https://github.com/mohamed-7oda" target="_blank" rel="noopener" class="hover:text-white">GitHub</a>
+      <a href="https://www.linkedin.com/in/mohamed-mahmoud-emam/" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a>
+      <a href="mailto:mohamedmahmoudemam23@gmail.com" class="hover:text-white">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const iconBars = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  const iconClose = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
+
+  function toggleMenu(force) {
+    const willOpen = typeof force === 'boolean' ? force : !mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open', willOpen);
+    menuIcon.innerHTML = willOpen ? iconClose : iconBars;
+    menuBtn.setAttribute('aria-expanded', willOpen);
+  }
+  menuBtn.addEventListener('click', () => toggleMenu());
+  document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Scroll spy
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      const top = s.offsetTop - 120;
+      if (window.scrollY >= top) current = s.id;
+    });
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
 </html>
